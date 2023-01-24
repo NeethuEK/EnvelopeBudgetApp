@@ -13,6 +13,8 @@ import SwiftUI
  -if the float is valid, then create an Income coreData object
  */
 struct EstimatedIncomeEditView: View {
+    @FetchRequest(sortDescriptors: [])var earning: FetchedResults<Incomes>
+    
     var paymentPeriods = ["Weekly", "Biweekly", "Semimonthly", "Monthly"]
     //@State private var selectedPaymentPeriod : PaymentPeriod = .Weekly
     
@@ -30,10 +32,9 @@ struct EstimatedIncomeEditView: View {
     
     var body: some View {
         VStack{
-        HStack{
+            HStack{
             
-            
-            TextField("Amount of regular paycheck", value: $amount, formatter: formatter)
+                TextField("Amount of regular paycheck", value: $amount, formatter: formatter)
                 .keyboardType(.decimalPad)
                 
             
@@ -46,12 +47,8 @@ struct EstimatedIncomeEditView: View {
                         Text($0)
                     }
                 }
-                
-                
             
-            
-            
-        }
+            }
             Button("Save") {
                 print("save")
                 
@@ -59,11 +56,11 @@ struct EstimatedIncomeEditView: View {
                 
                 //2. Make sure that it id rounded to 2 decimals
                 
-                saveIncome(amount, selectedPaymentPeriod)
+                //saveIncome(amount, selectedPaymentPeriod)
                 
                 //go to method that
             }
-    }
+        }
     }
     
     

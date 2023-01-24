@@ -18,7 +18,21 @@
 		0B199495294BD274008D66E8 /* DecimalRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B199494294BD274008D66E8 /* DecimalRounding.swift */; };
 		0B36F7E8290ABFCF00902AEB /* EstimatedIncomesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */; };
 		0B36F817291554AA00902AEB /* EstimatedIncomeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36F816291554AA00902AEB /* EstimatedIncomeEditView.swift */; };
+		0B401EE0296CC20900F632F3 /* EstimatedIncomeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */; };
+		0B401EE2296DDFAC00F632F3 /* PaymentPeriodConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */; };
+		0B401EEC2972E02800F632F3 /* MonthlyAmountTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */; };
+		0B401EF729773C6E00F632F3 /* getTotalIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EF629773C6D00F632F3 /* getTotalIncome.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B401EED2972E02800F632F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B126D8428FDDB040018EEBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B126D8B28FDDB040018EEBB;
+			remoteInfo = EnvelopeBudgetApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B126D8C28FDDB040018EEBB /* EnvelopeBudgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnvelopeBudgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,10 +47,22 @@
 		0B199494294BD274008D66E8 /* DecimalRounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalRounding.swift; sourceTree = "<group>"; };
 		0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomesView.swift; sourceTree = "<group>"; };
 		0B36F816291554AA00902AEB /* EstimatedIncomeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomeEditView.swift; sourceTree = "<group>"; };
+		0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomeCreateView.swift; sourceTree = "<group>"; };
+		0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPeriodConverter.swift; sourceTree = "<group>"; };
+		0B401EE92972E02800F632F3 /* MonthlyAmountTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyAmountTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyAmountTesting.swift; sourceTree = "<group>"; };
+		0B401EF629773C6D00F632F3 /* getTotalIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTotalIncome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0B126D8928FDDB040018EEBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B401EE62972E02800F632F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				0B126D8E28FDDB040018EEBB /* EnvelopeBudgetApp */,
+				0B401EEA2972E02800F632F3 /* MonthlyAmountTesting */,
 				0B126D8D28FDDB040018EEBB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0B126D8C28FDDB040018EEBB /* EnvelopeBudgetApp.app */,
+				0B401EE92972E02800F632F3 /* MonthlyAmountTesting.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,6 +93,7 @@
 		0B126D8E28FDDB040018EEBB /* EnvelopeBudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				0B401EF529773B0D00F632F3 /* Models */,
 				0B36F813291405E900902AEB /* Views */,
 				0B126D8F28FDDB040018EEBB /* EnvelopeBudgetAppApp.swift */,
 				0B1994902943CA57008D66E8 /* CurrencyFormatter.swift */,
@@ -72,8 +101,6 @@
 				0B126D9828FDDB040018EEBB /* Persistence.swift */,
 				0B126D9A28FDDB040018EEBB /* EnvelopeBudgetApp.xcdatamodeld */,
 				0B126D9528FDDB040018EEBB /* Preview Content */,
-				0B1994922943DB4D008D66E8 /* saveIncome.swift */,
-				0B199494294BD274008D66E8 /* DecimalRounding.swift */,
 			);
 			path = EnvelopeBudgetApp;
 			sourceTree = "<group>";
@@ -92,8 +119,28 @@
 				0B126D9128FDDB040018EEBB /* EnvelopeView.swift */,
 				0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */,
 				0B36F816291554AA00902AEB /* EstimatedIncomeEditView.swift */,
+				0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0B401EEA2972E02800F632F3 /* MonthlyAmountTesting */ = {
+			isa = PBXGroup;
+			children = (
+				0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */,
+			);
+			path = MonthlyAmountTesting;
+			sourceTree = "<group>";
+		};
+		0B401EF529773B0D00F632F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0B1994922943DB4D008D66E8 /* saveIncome.swift */,
+				0B199494294BD274008D66E8 /* DecimalRounding.swift */,
+				0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */,
+				0B401EF629773C6D00F632F3 /* getTotalIncome.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +151,7 @@
 			buildConfigurationList = 0B126D9F28FDDB040018EEBB /* Build configuration list for PBXNativeTarget "EnvelopeBudgetApp" */;
 			buildPhases = (
 				0B126D8828FDDB040018EEBB /* Sources */,
+				0B862A2C295F906700BCFFA3 /* ShellScript */,
 				0B126D8928FDDB040018EEBB /* Frameworks */,
 				0B126D8A28FDDB040018EEBB /* Resources */,
 			);
@@ -116,6 +164,24 @@
 			productReference = 0B126D8C28FDDB040018EEBB /* EnvelopeBudgetApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0B401EE82972E02800F632F3 /* MonthlyAmountTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B401EEF2972E02800F632F3 /* Build configuration list for PBXNativeTarget "MonthlyAmountTesting" */;
+			buildPhases = (
+				0B401EE52972E02800F632F3 /* Sources */,
+				0B401EE62972E02800F632F3 /* Frameworks */,
+				0B401EE72972E02800F632F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B401EEE2972E02800F632F3 /* PBXTargetDependency */,
+			);
+			name = MonthlyAmountTesting;
+			productName = MonthlyAmountTesting;
+			productReference = 0B401EE92972E02800F632F3 /* MonthlyAmountTesting.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,11 +189,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					0B126D8B28FDDB040018EEBB = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					0B401EE82972E02800F632F3 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 0B126D8B28FDDB040018EEBB;
 					};
 				};
 			};
@@ -145,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				0B126D8B28FDDB040018EEBB /* EnvelopeBudgetApp */,
+				0B401EE82972E02800F632F3 /* MonthlyAmountTesting */,
 			);
 		};
 /* End PBXProject section */
@@ -159,7 +230,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B401EE72972E02800F632F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B862A2C295F906700BCFFA3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B126D8828FDDB040018EEBB /* Sources */ = {
@@ -171,14 +270,33 @@
 				0B36F817291554AA00902AEB /* EstimatedIncomeEditView.swift in Sources */,
 				0B199495294BD274008D66E8 /* DecimalRounding.swift in Sources */,
 				0B126D9928FDDB040018EEBB /* Persistence.swift in Sources */,
+				0B401EE2296DDFAC00F632F3 /* PaymentPeriodConverter.swift in Sources */,
 				0B126D9228FDDB040018EEBB /* EnvelopeView.swift in Sources */,
 				0B1994932943DB4D008D66E8 /* saveIncome.swift in Sources */,
 				0B1994912943CA57008D66E8 /* CurrencyFormatter.swift in Sources */,
+				0B401EE0296CC20900F632F3 /* EstimatedIncomeCreateView.swift in Sources */,
+				0B401EF729773C6E00F632F3 /* getTotalIncome.swift in Sources */,
 				0B126D9028FDDB040018EEBB /* EnvelopeBudgetAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B401EE52972E02800F632F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B401EEC2972E02800F632F3 /* MonthlyAmountTesting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B401EEE2972E02800F632F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B126D8B28FDDB040018EEBB /* EnvelopeBudgetApp */;
+			targetProxy = 0B401EED2972E02800F632F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0B126D9D28FDDB040018EEBB /* Debug */ = {
@@ -353,6 +471,44 @@
 			};
 			name = Release;
 		};
+		0B401EF02972E02800F632F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7X6YVWHWT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neethu.MonthlyAmountTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnvelopeBudgetApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EnvelopeBudgetApp";
+			};
+			name = Debug;
+		};
+		0B401EF12972E02800F632F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7X6YVWHWT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neethu.MonthlyAmountTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EnvelopeBudgetApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EnvelopeBudgetApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -370,6 +526,15 @@
 			buildConfigurations = (
 				0B126DA028FDDB040018EEBB /* Debug */,
 				0B126DA128FDDB040018EEBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B401EEF2972E02800F632F3 /* Build configuration list for PBXNativeTarget "MonthlyAmountTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B401EF02972E02800F632F3 /* Debug */,
+				0B401EF12972E02800F632F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

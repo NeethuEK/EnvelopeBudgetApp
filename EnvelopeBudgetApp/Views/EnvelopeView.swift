@@ -21,15 +21,31 @@ struct EnvelopeView: View {
     //private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
+        TabView {
             VStack{
                 Text("Envelopes")
                     .font(.title)
                 
                 
                 
+                
             }
+            .tabItem {
+                 Image(systemName: "envelope.fill")
+                    .tint(.green)
+                Text("Envelopes")
+                    .foregroundColor(.green)
+            }
+            EstimatedIncomesView()
+                .tabItem {
+                    Image(systemName: "dollarsign.circle")
+                        .tint(.green)
+                    Text("Income")
+                }
         }
+        
+            
+        
     }
 /*
     private func addItem() {
