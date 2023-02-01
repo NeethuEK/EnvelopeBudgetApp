@@ -25,9 +25,18 @@ struct EnvelopeView: View {
             VStack{
                 Text("Envelopes")
                     .font(.title)
+                List(Envelopes) { envelope in
+                    //Text("\(envelope.label)")
+                }
                 
                 
-                
+                NavigationLink {
+                    //
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .tint(.green)
+                }
+
                 
             }
             .tabItem {

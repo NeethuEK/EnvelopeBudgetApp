@@ -6,3 +6,19 @@
 //
 
 import Foundation
+import CoreData
+
+extension NSManagedObjectContext{
+    func saveIfChanged() -> NSError?{
+        guard hasChanges else{
+            return nil
+        }
+        do{
+            try save()
+            return nil
+        } catch {
+            return error as NSError
+        }
+        
+    }
+}

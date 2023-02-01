@@ -3,7 +3,6 @@
     <entity name="Envelope" representedClassName="Envelope" syncable="YES" codeGenerationType="class">
         <attribute name="budget" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="label" optional="YES" attributeType="String"/>
-        <attribute name="transactions" optional="YES" attributeType="Transformable"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>

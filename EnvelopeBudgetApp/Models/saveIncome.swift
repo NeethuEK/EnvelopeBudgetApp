@@ -24,7 +24,7 @@ func getMonthlyAmount(checkAmount: Double, paymentPeriod: String) throws -> Doub
        
     case "Biweekly":
         monthlyAmount = (checkAmount * 26) / 12
-    case "SemiMonthly":
+    case "Semimonthly":
         monthlyAmount = (checkAmount * 24) / 12
     default:
         throw PaymentPeriodError.invalidPaymentString

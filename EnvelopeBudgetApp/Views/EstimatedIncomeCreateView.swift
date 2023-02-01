@@ -59,10 +59,9 @@ struct EstimatedIncomeCreateView: View {
                          try? saver.save()
                     }
                     
-                    
-                    
                 }catch{
                     print("Error in getting monthly amount. Payment Period: \(selectedPaymentPeriod)")
+                    
                 }
                 
                 

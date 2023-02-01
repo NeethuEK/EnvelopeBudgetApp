@@ -40,6 +40,11 @@ Create Transactions
  recive from unallocated
  
  
+ On the docket:
+ Have monthly amount of income and monthly total change when edited, along with selectedPaymentPeriod
+ 
+    display correct payment period in IncomeEdit and allow payment period to be edited
+ 
 
  
  Idea:

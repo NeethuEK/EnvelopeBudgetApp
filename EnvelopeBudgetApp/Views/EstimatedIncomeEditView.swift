@@ -13,16 +13,28 @@ import SwiftUI
  -if the float is valid, then create an Income coreData object
  */
 struct EstimatedIncomeEditView: View {
+    @Environment(\.managedObjectContext) var saver
+    
     @FetchRequest(sortDescriptors: [])var earning: FetchedResults<Incomes>
     
+    @StateObject var money: Incomes
+    
     var paymentPeriods = ["Weekly", "Biweekly", "Semimonthly", "Monthly"]
-    //@State private var selectedPaymentPeriod : PaymentPeriod = .Weekly
+    
+    //var income : FetchedResults<Incomes>.Element
     
     @State private var selectedPaymentPeriod = "Weekly"
     
-    @State private var amountText : String = ""
+    //@State private var amountText : String = ""
     
-    @State private var amount : Double = 0.00
+    init(money: Incomes) {
+        _money = StateObject(wrappedValue: money)
+    }
+    
+    var amount : Double{
+        let amount = money.amount
+        return amount
+    }
     
     var formatter: NumberFormatter{
         let formatter = NumberFormatter()
@@ -34,7 +46,8 @@ struct EstimatedIncomeEditView: View {
         VStack{
             HStack{
             
-                TextField("Amount of regular paycheck", value: $amount, formatter: formatter)
+                
+                TextField("Amount of regular paycheck", value: $money.amount, formatter: formatter)
                 .keyboardType(.decimalPad)
                 
             
@@ -42,7 +55,7 @@ struct EstimatedIncomeEditView: View {
             
             
             
-                Picker("Select payment period", selection: $selectedPaymentPeriod) {
+                Picker("Select payment period", selection: $money.paymentPeriod) {
                     ForEach(paymentPeriods, id: \.self){
                         Text($0)
                     }
@@ -50,8 +63,16 @@ struct EstimatedIncomeEditView: View {
             
             }
             Button("Save") {
-                print("save")
                 
+                //$money.paymentPeriod = selectedPaymentPeriod
+                //get monthly amount
+                
+                
+                let saveResult = saver.saveIfChanged()
+                
+                if saveResult != nil{
+                    print("Error: \(saveResult.debugDescription)")
+                }
                 //1. Check that the input is a valid float
                 
                 //2. Make sure that it id rounded to 2 decimals
@@ -66,11 +87,21 @@ struct EstimatedIncomeEditView: View {
     
 }
 
+/*
 struct EstimatedIncomeEditView_Previews: PreviewProvider {
+    @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
+    
+    //incomes = Incomes.fetchRequest()
+    
+    
     static var previews: some View {
-        EstimatedIncomeEditView()
+        
+        //incomes.fet
+        //EstimatedIncomeEditView(money: Incomes.)
+        
+        //Incomes.
     }
-}
+}*/
 
 /*
 enum PaymentPeriod: String, CaseIterable, Identifiable{

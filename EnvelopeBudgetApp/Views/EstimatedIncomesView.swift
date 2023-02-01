@@ -9,6 +9,11 @@ import SwiftUI
 
 struct EstimatedIncomesView: View {
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
+    
+    @Environment(\.managedObjectContext) var saver
+    
+    @State private var showingDeleteAlert = false
+    
     var formatter: NumberFormatter{
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -21,30 +26,42 @@ struct EstimatedIncomesView: View {
             VStack{
                 Text("Regular Incomes")
                     .font(.title)
-                List(incomes) { income in
-                    
-                    VStack {
-                        let MonthlypaycheckAmount = String(format: "%.2f", income.monthlyAmount)
+                NavigationView {
+                    List {
                         
-                        let roundedAmount = String(format: "%.2f", income.amount)
-                        
-                        Text("\(MonthlypaycheckAmount)")
-                        
-                        
-                        
-                        HStack {
-                            //Text("\(roundedAmount)")
-                                //.font(.caption)
-                            
-                            Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
-                                .font(.caption)
+                        ForEach(incomes){ income in
+                            NavigationLink {
+                                //EstimatedIncomeEditView()
+                                EstimatedIncomeEditView(money: income)
+                            } label: {
+                                VStack {
+                                    let MonthlypaycheckAmount = String(format: "%.2f", income.monthlyAmount)
+                                    
+                                    let roundedAmount = String(format: "%.2f", income.amount)
+                                    
+                                    Text("\(MonthlypaycheckAmount)")
+                                    
+                                    
+                                    
+                                    HStack {
+                                        //Text("\(roundedAmount)")
+                                            //.font(.caption)
+                                        
+                                        Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
+                                            .font(.caption)
+                                    }
+                                }
+                            }
                         }
-                    }
-                    
-                    //Text("")
-                    
-                    //
-                }
+                        .onDelete(perform: delete)
+                        
+                        
+                        
+                        //Text("")
+                        
+                        //
+                    }//List
+                }//Navigation View
                 
                 HStack{
                     Text("Total income")
@@ -67,6 +84,30 @@ struct EstimatedIncomesView: View {
 
                 
             }
+        }
+    }//body view
+    
+    func delete(at offsets: IndexSet){
+        
+        
+        for index in offsets{
+            let income = incomes[index]
+            saver.delete(income)
+        }
+        do {
+            try saver.save()
+        }catch{
+            print("Error trying to delete income")
+        }
+        
+    }
+    
+    func deleteIncome(_ income: FetchedResults<Incomes>.Element){
+        saver.delete(income)
+        do{
+            try saver.save()
+        } catch{
+            print("Error when deleting income")
         }
     }
     
