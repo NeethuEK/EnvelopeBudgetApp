@@ -20,70 +20,77 @@ struct EstimatedIncomesView: View {
         return formatter
     }
     
+    
     var body: some View {
         
         NavigationView {
-            VStack{
-                Text("Regular Incomes")
-                    .font(.title)
-                NavigationView {
-                    List {
-                        
-                        ForEach(incomes){ income in
-                            NavigationLink {
-                                //EstimatedIncomeEditView()
-                                EstimatedIncomeEditView(money: income)
-                            } label: {
-                                VStack {
-                                    let MonthlypaycheckAmount = String(format: "%.2f", income.monthlyAmount)
-                                    
-                                    let roundedAmount = String(format: "%.2f", income.amount)
-                                    
-                                    Text("\(MonthlypaycheckAmount)")
-                                    
-                                    
-                                    
-                                    HStack {
-                                        //Text("\(roundedAmount)")
-                                            //.font(.caption)
+            
+            Color("BackgroundMint")
+                .overlay(
+                VStack{
+                    Text("Regular Incomes")
+                        .font(.title)
+                    NavigationView {
+                        List {
+                            
+                            ForEach(incomes){ income in
+                                NavigationLink {
+                                    //EstimatedIncomeEditView()
+                                    EstimatedIncomeEditView(income: income)
+                                } label: {
+                                    VStack {
+                                        let MonthlypaycheckAmount = String(format: "%.2f", income.monthlyAmount)
                                         
-                                        Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
-                                            .font(.caption)
+                                        let roundedAmount = String(format: "%.2f", income.amount)
+                                        
+                                        Text("\(MonthlypaycheckAmount)")
+                                        
+                                        
+                                        
+                                        HStack {
+                                            //Text("\(roundedAmount)")
+                                                //.font(.caption)
+                                            
+                                            Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
+                                                .font(.caption)
+                                        }
                                     }
                                 }
                             }
-                        }
-                        .onDelete(perform: delete)
+                            .onDelete(perform: delete)
+                            
+                            
+                            
+                            
+                            //Text("")
+                            
+                            //
+                        }//List
                         
-                        
-                        
-                        //Text("")
-                        
-                        //
-                    }//List
-                }//Navigation View
-                
-                HStack{
-                    Text("Total income")
-                    let total = getTotalIncome(incomes)
-                   
+                    }//Navigation View
                     
-                    let formatedValue = String(format: "%.2f", total)
-                    Text("\(formatedValue)")
+                    HStack{
+                        Text("Total income")
+                        let total = getTotalIncome(incomes)
+                       
+                        
+                        let formatedValue = String(format: "%.2f", total)
+                        Text("\(formatedValue)")
+                        
+                        
+                    }
+                    Text("Available income")
                     
-                    
-                }
-                Text("Available income")
-                
-                NavigationLink {
-                    EstimatedIncomeCreateView()
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .tint(.green)
-                }
+                    NavigationLink {
+                        EstimatedIncomeCreateView()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .tint(.green)
+                    }
 
-                
-            }
+                    
+                }
+            )
         }
     }//body view
     

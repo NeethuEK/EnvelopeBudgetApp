@@ -22,25 +22,29 @@ struct EnvelopeView: View {
 
     var body: some View {
         TabView {
-            VStack{
-                Text("Envelopes")
-                    .font(.title)
-                List(Envelopes) { envelope in
-                    //Text("\(envelope.label)")
+            NavigationView{
+                VStack{
+                    Text("Envelopes")
+                        .font(.title)
+                    List(Envelopes) { envelope in
+                        //Text("\(envelope.label)")
+                    }
+                    
+                    
+                    NavigationLink {
+                        EnvelopeCreateView()
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .tint(.green)
+                    }
+                    
+                    
                 }
                 
                 
-                NavigationLink {
-                    //
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .tint(.green)
-                }
-
-                
-            }
+            }//NavigationView
             .tabItem {
-                 Image(systemName: "envelope.fill")
+                Image(systemName: "envelope.fill")
                     .tint(.green)
                 Text("Envelopes")
                     .foregroundColor(.green)
@@ -51,7 +55,7 @@ struct EnvelopeView: View {
                         .tint(.green)
                     Text("Income")
                 }
-        }
+        }//tabView
         
             
         

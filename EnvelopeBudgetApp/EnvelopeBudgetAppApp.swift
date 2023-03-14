@@ -8,8 +8,6 @@
 /*
 General To Do:
  -Set up Edit income
- -Set up ability to delete income
--segue to income
  -Envelope Creation
  -Envelope listing
     -show allocated amount
@@ -30,7 +28,7 @@ General To Do:
  
  
  Current Task:
-Create Envelopes
+***Create Envelopes
  OR
 Create Transactions
  types users would need:
@@ -40,16 +38,24 @@ Create Transactions
  recive from unallocated
  
  
+ Pinned for Later:
+ Fix income edit pickerView, preview and monthly amount recalculation
+ 
  On the docket:
- Have monthly amount of income and monthly total change when edited, along with selectedPaymentPeriod
  
-    display correct payment period in IncomeEdit and allow payment period to be edited
+ Add save function to create envelopes
  
-
+ -edit interface to add some spacing to elements
+ 
+ -have save buttons go back to list
+ 
+ -plan for dealing with leftover money at the end of the month
  
  Idea:
  Have each transaction state what envelope(s) their apart of. When you click of on a specific envelope go through the transactions and add the ones that are of that envelope to the list (sorted by date)
  */
+
+
 
 import SwiftUI
 

@@ -15,26 +15,31 @@ import SwiftUI
 struct EstimatedIncomeEditView: View {
     @Environment(\.managedObjectContext) var saver
     
-    @FetchRequest(sortDescriptors: [])var earning: FetchedResults<Incomes>
+    @State var earning: FetchedResults<Incomes>.Element
     
-    @StateObject var money: Incomes
+    //@StateObject var money: Incomes
     
     var paymentPeriods = ["Weekly", "Biweekly", "Semimonthly", "Monthly"]
     
     //var income : FetchedResults<Incomes>.Element
     
-    @State private var selectedPaymentPeriod = "Weekly"
-    
-    //@State private var amountText : String = ""
-    
-    init(money: Incomes) {
-        _money = StateObject(wrappedValue: money)
+    private var selectedPaymentPeriodValue: String{
+        return getPaymentPeriod(earning.paymentPeriod)
     }
     
+    @State private var selectedPaymentPeriod : String = ""
+    
+    //@ObservedObject var income: Incomes
+    //@State private var amountText : String = ""
+    
+    //init(money: Incomes) {
+        //_money = StateObject(wrappedValue: money)
+    //}
+    /*
     var amount : Double{
         let amount = money.amount
         return amount
-    }
+    }*/
     
     var formatter: NumberFormatter{
         let formatter = NumberFormatter()
@@ -42,23 +47,39 @@ struct EstimatedIncomeEditView: View {
         return formatter
     }
     
+    init(income: FetchedResults<Incomes>.Element){
+        earning = income
+        if Int(earning.paymentPeriod) != nil{
+            selectedPaymentPeriod = paymentPeriods[Int(earning.paymentPeriod) - 1]
+        }
+        
+    }
+    
     var body: some View {
         VStack{
             HStack{
             
                 
-                TextField("Amount of regular paycheck", value: $money.amount, formatter: formatter)
+                TextField("Amount of regular paycheck", value: $earning.amount, formatter: formatter)
                 .keyboardType(.decimalPad)
+                
                 
             
             //amount = Float(amountText) ?? 0.00
             
-            
-            
-                Picker("Select payment period", selection: $money.paymentPeriod) {
-                    ForEach(paymentPeriods, id: \.self){
-                        Text($0)
+                //selectedPaymentPeriod = self.selectedPaymentPeriodValue
+                
+            //setDefaultPaymentPeriod()
+                
+                Picker("Select payment period", selection: $selectedPaymentPeriod) {
+                    List {
+                        ForEach(paymentPeriods, id: \.self){ paymentPeriod in
+                            
+                                
+                        }
                     }
+                }.onAppear{
+                    //selectedPaymentPeriod = paymentPeriods[Int(earning.paymentPeriod) - 1]
                 }
             
             }
@@ -84,6 +105,9 @@ struct EstimatedIncomeEditView: View {
         }
     }
     
+    func setDefaultPaymentPeriod(){
+        selectedPaymentPeriod = paymentPeriods[Int(earning.paymentPeriod)]
+    }
     
 }
 
@@ -91,21 +115,28 @@ struct EstimatedIncomeEditView: View {
 struct EstimatedIncomeEditView_Previews: PreviewProvider {
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
     
+    
     //incomes = Incomes.fetchRequest()
     
     
     static var previews: some View {
         
         //incomes.fet
-        //EstimatedIncomeEditView(money: Incomes.)
+        EstimatedIncomeEditView(income: <#FetchedResults<Incomes>.Element#>)
         
         //Incomes.
     }
 }*/
 
 /*
-enum PaymentPeriod: String, CaseIterable, Identifiable{
+enum PaymentPeriod: String, CaseIterable{
     var id: ObjectIdentifier
     
     case Weekly, Biweekly, Semimonthly, Monthly
+}*/
+/*
+struct Previews_EstimatedIncomeEditView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }*/

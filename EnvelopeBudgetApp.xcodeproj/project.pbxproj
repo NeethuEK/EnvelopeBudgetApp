@@ -24,6 +24,7 @@
 		0B401EF729773C6E00F632F3 /* getTotalIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EF629773C6D00F632F3 /* getTotalIncome.swift */; };
 		0B401EF92980555A00F632F3 /* EnvelopeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */; };
 		0B401EFB29843A5600F632F3 /* SaveChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFA29843A5600F632F3 /* SaveChanges.swift */; };
+		0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		0B401EF629773C6D00F632F3 /* getTotalIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTotalIncome.swift; sourceTree = "<group>"; };
 		0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCreateView.swift; sourceTree = "<group>"; };
 		0B401EFA29843A5600F632F3 /* SaveChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChanges.swift; sourceTree = "<group>"; };
+		0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPeriod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		0B126D8E28FDDB040018EEBB /* EnvelopeBudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				0B401EFC298C2AAF00F632F3 /* Controllers */,
 				0B401EF529773B0D00F632F3 /* Models */,
 				0B36F813291405E900902AEB /* Views */,
 				0B126D8F28FDDB040018EEBB /* EnvelopeBudgetAppApp.swift */,
@@ -141,12 +144,20 @@
 		0B401EF529773B0D00F632F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0B401EFC298C2AAF00F632F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				0B1994922943DB4D008D66E8 /* saveIncome.swift */,
 				0B199494294BD274008D66E8 /* DecimalRounding.swift */,
 				0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */,
 				0B401EF629773C6D00F632F3 /* getTotalIncome.swift */,
 			);
-			path = Models;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */,
 				0B126D9C28FDDB040018EEBB /* EnvelopeBudgetApp.xcdatamodeld in Sources */,
 				0B36F7E8290ABFCF00902AEB /* EstimatedIncomesView.swift in Sources */,
 				0B36F817291554AA00902AEB /* EstimatedIncomeEditView.swift in Sources */,
