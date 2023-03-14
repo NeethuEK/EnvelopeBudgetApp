@@ -19,7 +19,7 @@ func getPaymentPeriod(_ num: Int16) -> String{
     case 2:
         return "Biweekly"
     case 3:
-        return "SemiMonthly"
+        return "Semimonthly"
     case 4:
         return "Monthly"
     default:
@@ -33,7 +33,7 @@ func getPaymentPeriodNumber(_ payPeriod: String) throws -> Int16{
         return 1
     case "Biweekly":
         return 2
-    case "SemiMonthly":
+    case "Semimonthly":
         return 3
     case "Monthly":
         return 4

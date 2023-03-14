@@ -11,11 +11,10 @@ struct EstimatedIncomeCreateView: View {
     @Environment(\.managedObjectContext) var saver
     
     var paymentPeriods = ["Weekly", "Biweekly", "Semimonthly", "Monthly"]
-    //@State private var selectedPaymentPeriod : PaymentPeriod = .Weekly
+    
     
     @State private var selectedPaymentPeriod = "Weekly"
     
-    //@State private var amountText : String = ""
     
     @State private var amount : Double = 0.00
     
@@ -39,9 +38,9 @@ struct EstimatedIncomeCreateView: View {
             
             }
             Button("Save") {
-                print("save")
                 
-                //saveIncome(amount, selectedPaymentPeriod)
+                
+                
                 do{
                     
                     let roundedAmount = decimalRounding(amount)
@@ -55,14 +54,16 @@ struct EstimatedIncomeCreateView: View {
                          income.amount = roundedAmount
                          income.paymentPeriod = paymentNumberRep
                          income.monthlyAmount = monthlyAmount
+                         income.iD = UUID()
                          
                          try? saver.save()
+                        
+                        
                     }
-                    
-                    
                     
                 }catch{
                     print("Error in getting monthly amount. Payment Period: \(selectedPaymentPeriod)")
+                    
                 }
                 
                 
@@ -71,7 +72,7 @@ struct EstimatedIncomeCreateView: View {
                 
                 
                 
-            }
+            }//button
         }
     }
 }
