@@ -10,7 +10,11 @@ import SwiftUI
 
 
 struct EnvelopeCreateView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
+    
+    @FetchRequest(sortDescriptors: []) var envelopes: FetchedResults<Envelope>
     
     @Environment(\.managedObjectContext) var saver
     
@@ -19,6 +23,10 @@ struct EnvelopeCreateView: View {
     @State var maxAmount : Double = 0
     
     @State var envelopeTitle : String = ""
+    
+    @State private var showEmptyNameAlert = false
+    
+    @State private var showExcessAmountAlert = false
     
     var formatter: NumberFormatter{
         let formatter = NumberFormatter()
@@ -59,9 +67,12 @@ struct EnvelopeCreateView: View {
                     //check if allocated amount is greater than max amount
                     if allocatedAmount > maxAmount{
                         //alert
+                        showExcessAmountAlert = true
                     }else if envelopeTitle.isEmpty{
                         //alert
+                        showEmptyNameAlert = true
                     }else{
+                        
                         do{
                             let roundedAllocation = decimalRounding(allocatedAmount)
                             
@@ -70,14 +81,23 @@ struct EnvelopeCreateView: View {
                             envelope.label = envelopeTitle
                             
                             try? saver.save()
+                            print("saved")
+                            dismiss.self.callAsFunction()
                         } catch{
                             print("Issue saving envelope")
                         }
                         
                         
                         
+                        
                     }
                 }
+                .alert("Title required before saving", isPresented: $showEmptyNameAlert, actions: {
+                    Button("OK",role: .cancel) {}
+                })
+                .alert("Not enough money in avalible total budget. Please lower the amount", isPresented: $showExcessAmountAlert, actions: {
+                    Button("OK",role: .cancel) {}
+                })
                 .padding()
                 .foregroundColor(.black)
                 .background(Color.mint)
@@ -89,7 +109,10 @@ struct EnvelopeCreateView: View {
     }
     
     func getmaxAmount() -> Double{
-        let max = getTotalIncome(incomes)
+        let max = getTotalIncome(incomes) - getEnvelopeTotal(envelopes)
+        //subtract envelope totals
+        //subtract tracsactions that aren't sorted into an envelope
+        //add transactions
         
         return max
     }

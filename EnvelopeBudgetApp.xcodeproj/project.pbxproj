@@ -18,6 +18,7 @@
 		0B199495294BD274008D66E8 /* DecimalRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B199494294BD274008D66E8 /* DecimalRounding.swift */; };
 		0B36F7E8290ABFCF00902AEB /* EstimatedIncomesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */; };
 		0B36F817291554AA00902AEB /* EstimatedIncomeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36F816291554AA00902AEB /* EstimatedIncomeEditView.swift */; };
+		0B3A63E829C8FD2900897C7D /* GetEnvelopeTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A63E729C8FD2900897C7D /* GetEnvelopeTotal.swift */; };
 		0B401EE0296CC20900F632F3 /* EstimatedIncomeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */; };
 		0B401EE2296DDFAC00F632F3 /* PaymentPeriodConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */; };
 		0B401EEC2972E02800F632F3 /* MonthlyAmountTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */; };
@@ -50,6 +51,7 @@
 		0B199494294BD274008D66E8 /* DecimalRounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalRounding.swift; sourceTree = "<group>"; };
 		0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomesView.swift; sourceTree = "<group>"; };
 		0B36F816291554AA00902AEB /* EstimatedIncomeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomeEditView.swift; sourceTree = "<group>"; };
+		0B3A63E729C8FD2900897C7D /* GetEnvelopeTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEnvelopeTotal.swift; sourceTree = "<group>"; };
 		0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomeCreateView.swift; sourceTree = "<group>"; };
 		0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPeriodConverter.swift; sourceTree = "<group>"; };
 		0B401EE92972E02800F632F3 /* MonthlyAmountTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyAmountTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				0B199494294BD274008D66E8 /* DecimalRounding.swift */,
 				0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */,
 				0B401EF629773C6D00F632F3 /* getTotalIncome.swift */,
+				0B3A63E729C8FD2900897C7D /* GetEnvelopeTotal.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */,
 				0B126D9C28FDDB040018EEBB /* EnvelopeBudgetApp.xcdatamodeld in Sources */,
 				0B36F7E8290ABFCF00902AEB /* EstimatedIncomesView.swift in Sources */,
+				0B3A63E829C8FD2900897C7D /* GetEnvelopeTotal.swift in Sources */,
 				0B36F817291554AA00902AEB /* EstimatedIncomeEditView.swift in Sources */,
 				0B199495294BD274008D66E8 /* DecimalRounding.swift in Sources */,
 				0B401EFB29843A5600F632F3 /* SaveChanges.swift in Sources */,

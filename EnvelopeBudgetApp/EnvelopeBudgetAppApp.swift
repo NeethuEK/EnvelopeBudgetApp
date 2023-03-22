@@ -44,6 +44,9 @@ Create Transactions
  On the docket:
  
  Add save function to create envelopes
+    go back to list when save is clicked
+    error alerts
+    Re-adjust total avalible alocation 
  
  -edit interface to add some spacing to elements
  

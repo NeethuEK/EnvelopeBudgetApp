@@ -10,6 +10,8 @@ import CoreData
 
 struct EnvelopeView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @State var showCreateView = false
 
     //@FetchRequest(entity: Envelopes.entity(), sortDescriptors: [])
     
@@ -27,7 +29,8 @@ struct EnvelopeView: View {
                     Text("Envelopes")
                         .font(.title)
                     List(Envelopes) { envelope in
-                        //Text("\(envelope.label)")
+                        
+                        Text("\(envelope.label!)")
                     }
                     
                     
@@ -37,6 +40,11 @@ struct EnvelopeView: View {
                         Image(systemName: "plus.circle.fill")
                             .tint(.green)
                     }
+                    
+                    
+                    
+                    
+                    
                     
                     
                 }
