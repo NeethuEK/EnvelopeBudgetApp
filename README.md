@@ -7,3 +7,4 @@ This is a personal finance app built around the [envelope budgeting system](http
 *Fully implemted ability to create envelopes
 *Ability to edit incomes and Envelopes
 *Implement adding transactions
+
