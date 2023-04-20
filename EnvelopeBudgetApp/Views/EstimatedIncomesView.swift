@@ -59,12 +59,6 @@ struct EstimatedIncomesView: View {
                             }
                             .onDelete(perform: delete)
                             
-                            
-                            
-                            
-                            //Text("")
-                            
-                            //
                         }//List
                         
                     }//Navigation View
@@ -96,7 +90,6 @@ struct EstimatedIncomesView: View {
     
     func delete(at offsets: IndexSet){
         
-        
         for index in offsets{
             let income = incomes[index]
             saver.delete(income)
@@ -111,6 +104,7 @@ struct EstimatedIncomesView: View {
     
     func deleteIncome(_ income: FetchedResults<Incomes>.Element){
         saver.delete(income)
+        
         do{
             try saver.save()
         } catch{
@@ -122,8 +116,6 @@ struct EstimatedIncomesView: View {
         print(value)
     }
 }
-
-
 
 struct EstimatedIncomesView_Previews: PreviewProvider {
     static var previews: some View {
