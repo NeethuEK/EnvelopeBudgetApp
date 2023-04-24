@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct EstimatedIncomeCreateView: View {
+    
     @Environment(\.managedObjectContext) var saver
     
     var paymentPeriods = ["Weekly", "Biweekly", "Semimonthly", "Monthly"]
     
-    
     @State private var selectedPaymentPeriod = "Weekly"
-    
     
     @State private var amount : Double = 0.00
     
@@ -38,8 +37,6 @@ struct EstimatedIncomeCreateView: View {
             
             }
             Button("Save") {
-                
-                
                 
                 do{
                     
@@ -65,20 +62,17 @@ struct EstimatedIncomeCreateView: View {
                     print("Error in getting monthly amount. Payment Period: \(selectedPaymentPeriod)")
                     
                 }
-                
-                
-                
-               
-                
-                
-                
             }//button
         }
     }
 }
-
+/*
 struct EstimatedIncomeCreateView_Previews: PreviewProvider {
+    
+    @State var test : Bool = false
     static var previews: some View {
-        EstimatedIncomeCreateView()
+        
+        
+        EstimatedIncomeCreateView(popToList: self.$test)
     }
-}
+}*/

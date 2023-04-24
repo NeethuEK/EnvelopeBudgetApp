@@ -14,6 +14,8 @@ struct EstimatedIncomesView: View {
     
     @State private var showingDeleteAlert = false
     
+    @State private var incomeToDelete: FetchedResults<Incomes>.Element? = nil
+    
     var formatter: NumberFormatter{
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -56,15 +58,22 @@ struct EstimatedIncomesView: View {
                                         }
                                     }
                                 }
+                                .swipeActions {
+                                    Button("Delete",role: .destructive) {
+                                        self.incomeToDelete = income
+                                        showingDeleteAlert = true
+                                    }
+                                }.confirmationDialog(Text("Are you sure you want to delete this income"), isPresented: $showingDeleteAlert, titleVisibility: .visible) {
+                                    Button("Delete",role: .destructive) {
+                                        deleteIncome(incomeToDelete)
+                                    }
+                                    Button("Cancel", role: .cancel) {
+                                        showingDeleteAlert = false
+                                    }
+                                }
                             }
-                            .onDelete(perform: delete)
+                            //.onDelete(perform: delete)
                             
-                            
-                            
-                            
-                            //Text("")
-                            
-                            //
                         }//List
                         
                     }//Navigation View
@@ -81,18 +90,23 @@ struct EstimatedIncomesView: View {
                     }
                     Text("Available income")
                     
+                    
                     NavigationLink {
                         EstimatedIncomeCreateView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .tint(.green)
                     }
+                    .isDetailLink(false)
+                    
 
                     
                 }
             )
         }
     }//body view
+    
+    
     
     func delete(at offsets: IndexSet){
         
@@ -109,7 +123,10 @@ struct EstimatedIncomesView: View {
         
     }
     
-    func deleteIncome(_ income: FetchedResults<Incomes>.Element){
+    func deleteIncome(_ income: FetchedResults<Incomes>.Element?){
+        
+        guard let income else { return }
+        
         saver.delete(income)
         do{
             try saver.save()
