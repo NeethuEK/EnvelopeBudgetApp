@@ -52,5 +52,53 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03CDB923-76EC-40D9-9A99-28CD47C2B26B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EnvelopeBudgetApp/Views/EnvelopeListRow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "previews"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "03CDB923-76EC-40D9-9A99-28CD47C2B26B - 1c01821c78ca851f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static EnvelopeBudgetApp.EnvelopeListRow_Previews.previews.getter : some"
+                  moduleName = "EnvelopeBudgetApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neethukuruvilla/Desktop/PracticeProjects/EnvelopeBudgetApp/EnvelopeBudgetApp/Views/EnvelopeListRow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "03CDB923-76EC-40D9-9A99-28CD47C2B26B - 1c01821c78ca851f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static EnvelopeBudgetApp.EnvelopeListRow_Previews.previews.getter : some"
+                  moduleName = "EnvelopeBudgetApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neethukuruvilla/Desktop/PracticeProjects/EnvelopeBudgetApp/EnvelopeBudgetApp/Views/EnvelopeListRow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "324">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -50,14 +50,13 @@ struct EstimatedIncomesView: View {
                                         
                                         
                                         HStack {
-                                            //Text("\(roundedAmount)")
-                                                //.font(.caption)
                                             
                                             Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
                                                 .font(.caption)
                                         }
                                     }
                                 }
+                                
                                 .swipeActions {
                                     Button("Delete",role: .destructive) {
                                         self.incomeToDelete = income
@@ -70,7 +69,7 @@ struct EstimatedIncomesView: View {
                                     Button("Cancel", role: .cancel) {
                                         showingDeleteAlert = false
                                     }
-                                }
+                                } //delete with confirmation message
                             }
                             //.onDelete(perform: delete)
                             

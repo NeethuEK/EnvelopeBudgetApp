@@ -23,7 +23,9 @@ struct EnvelopeView: View {
                         .font(.title)
                     List(Envelopes) { envelope in
                         
-                        Text("\(envelope.label!)")
+                        //Text("\(envelope.label!)")
+                        
+                        EnvelopeListRow(envelope: envelope)
                     }
                     
                     
