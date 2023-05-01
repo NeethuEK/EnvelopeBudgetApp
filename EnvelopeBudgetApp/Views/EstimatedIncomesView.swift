@@ -127,9 +127,9 @@ struct EstimatedIncomesView: View {
         guard let income else { return }
         
         saver.delete(income)
-        do{
+        do {
             try saver.save()
-        } catch{
+        } catch {
             print("Error when deleting income")
         }
     }

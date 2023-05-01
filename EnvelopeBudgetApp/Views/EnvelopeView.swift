@@ -14,6 +14,10 @@ struct EnvelopeView: View {
     @State var showCreateView = false
     
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
+    
+    @State private var envelopeToDelete: FetchedResults<Envelope>.Element? = nil
+    
+    
 
     var body: some View {
         TabView {
@@ -26,7 +30,15 @@ struct EnvelopeView: View {
                         //Text("\(envelope.label!)")
                         
                         EnvelopeListRow(envelope: envelope)
+                            .swipeActions {
+                                Button("Delete",role: .destructive) {
+                                    self.envelopeToDelete = envelope
+                                    deleteEnvelope(envelopeToDelete)
+                                }
+                            }
                     }
+                   
+                    
                     
                     
                     NavigationLink {
@@ -53,6 +65,17 @@ struct EnvelopeView: View {
                 }
         }//tabView
         
+    }
+    
+    func deleteEnvelope(_ env: FetchedResults<Envelope>.Element?){
+        guard let env else { return }
+        
+        viewContext.delete(env)
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error when deleting Envelope")
+        }
     }
 }
 

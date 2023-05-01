@@ -63,7 +63,7 @@ struct EnvelopeCreateView: View {
                 
                 Button("Save") {
                     print("Save")
-                    
+                    maxAmount = getmaxAmount()
                     //check if allocated amount is greater than max amount
                     if allocatedAmount > maxAmount{
                         //alert
@@ -95,7 +95,7 @@ struct EnvelopeCreateView: View {
                 .alert("Title required before saving", isPresented: $showEmptyNameAlert, actions: {
                     Button("OK",role: .cancel) {}
                 })
-                .alert("Not enough money in avalible total budget. Please lower the amount", isPresented: $showExcessAmountAlert, actions: {
+                .alert("Not enough money in available total budget. Please lower the amount", isPresented: $showExcessAmountAlert, actions: {
                     Button("OK",role: .cancel) {}
                 })
                 .padding()
