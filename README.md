@@ -17,6 +17,13 @@ Users can create regular and delete regular incomes to get the total amount aval
 <img src="https://user-images.githubusercontent.com/102758696/235316953-56132bb0-f3f1-44c5-8146-9c699fda41d3.png" width=50% height=50%>
 
 ### Envelopes
+Users can create envelopes to represent catagories of spending. Such as gas, amenities, groceries, etc.
+##### Envelope List
+
+<img src="https://user-images.githubusercontent.com/102758696/235492694-beb97163-fdf2-4413-b3d2-f01465ad06a6.png" width=50% height=50%>
+##### Envelope Creation
+
+<img src="https://user-images.githubusercontent.com/102758696/235492841-db2d9214-9c2f-42ff-b17d-b0f4cc905fa9.png" width=50% height=50%>
 
 ## Known Bugs
 
@@ -28,6 +35,7 @@ Users can create regular and delete regular incomes to get the total amount aval
 
 * Fully implemted envelopes
   * Ability to delete envelope
+   *Confirmation prompt for deleting envelope
   * Ability edit envelopes
 * Fully implemented Incomes
   *Ability to edit incomes
