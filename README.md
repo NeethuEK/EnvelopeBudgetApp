@@ -30,13 +30,13 @@ Users can create envelopes to represent catagories of spending. Such as gas, ame
 
 * If the dollar sign is removed when inputing the amount when creating a new income, the amount will be saved as 0.
 
-## Roapmap/PlannedFeatures
+## Roapmap/Planned Features
 
-* Fully implemted envelopes
+* Fully implement envelopes
   * Ability to delete envelope
    *Confirmation prompt for deleting envelope
   * Ability edit envelopes
-* Fully implemented Incomes
+* Fully implement incomes
   *Ability to edit incomes
-* Implement adding transactions
-
+* Implement transactions
+* Add UI design
