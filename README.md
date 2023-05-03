@@ -1,6 +1,6 @@
 # EnvelopeBudgetApp
 
-This is a personal finance app built around the [envelope budgeting system](https://www.capitalone.com/learn-grow/money-management/envelope-budget-system/). The systems works by allocating your 
+This is a personal finance app built around the [envelope budgeting system](https://www.capitalone.com/learn-grow/money-management/envelope-budget-system/).
 
 ## Features
 
