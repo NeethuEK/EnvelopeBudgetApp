@@ -10,6 +10,8 @@ import SwiftUI
 struct EstimatedIncomesView: View {
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
     
+    @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
+    
     @Environment(\.managedObjectContext) var saver
     
     @State private var showingDeleteAlert = false
@@ -87,7 +89,11 @@ struct EstimatedIncomesView: View {
                         
                         
                     }
-                    Text("Available income")
+                    Text("Available income: ")
+                    var availableIncome = getAvailableAmount(incomes, Envelopes)
+                                        
+                    let formatedAvailableIncome = String(format: "%.2f", availableIncome)
+                    Text( "\(formatedAvailableIncome)")
                     
                     
                     NavigationLink {

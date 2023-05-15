@@ -17,7 +17,7 @@ struct EnvelopeView: View {
     
     @State private var envelopeToDelete: FetchedResults<Envelope>.Element? = nil
     
-    
+    @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
 
     var body: some View {
         TabView {
@@ -38,7 +38,13 @@ struct EnvelopeView: View {
                             }
                     }
                    
-                    
+                    HStack{
+                        Text(verbatim: "Available Income: ")
+                        var availableIncome = getAvailableAmount(incomes, Envelopes)
+                                            
+                        let formatedAvailableIncome = String(format: "%.2f", availableIncome)
+                        Text("\(formatedAvailableIncome)")
+                    }
                     
                     
                     NavigationLink {

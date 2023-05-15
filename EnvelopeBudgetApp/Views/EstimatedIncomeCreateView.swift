@@ -66,13 +66,11 @@ struct EstimatedIncomeCreateView: View {
         }
     }
 }
-/*
+
 struct EstimatedIncomeCreateView_Previews: PreviewProvider {
     
-    @State var test : Bool = false
     static var previews: some View {
         
-        
-        EstimatedIncomeCreateView(popToList: self.$test)
+        EstimatedIncomeCreateView()
     }
-}*/
+}
