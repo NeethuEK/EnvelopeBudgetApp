@@ -90,7 +90,7 @@ struct EstimatedIncomesView: View {
                         
                     }
                     Text("Available income: ")
-                    var availableIncome = getAvailableAmount(incomes, Envelopes)
+                    let availableIncome = getAvailableAmount(incomes, Envelopes)
                                         
                     let formatedAvailableIncome = String(format: "%.2f", availableIncome)
                     Text( "\(formatedAvailableIncome)")
