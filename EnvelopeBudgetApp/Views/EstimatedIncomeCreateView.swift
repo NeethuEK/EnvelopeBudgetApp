@@ -23,17 +23,22 @@ struct EstimatedIncomeCreateView: View {
         return formatter
     }
     var body: some View {
+        Color("BackgroundMint")
+            .overlay(
         VStack{
             HStack{
             
                 TextField("Amount of regular paycheck", value: $amount, formatter: formatter)
                 .keyboardType(.decimalPad)
+                .background(Color.white)
+                .textFieldStyle(.roundedBorder)
             
                 Picker("Select payment period", selection: $selectedPaymentPeriod) {
                     ForEach(paymentPeriods, id: \.self){
                         Text($0)
                     }
                 }
+                
             
             }
             Button("Save") {
@@ -63,7 +68,12 @@ struct EstimatedIncomeCreateView: View {
                     
                 }
             }//button
+            .padding()
+            .foregroundColor(.black)
+            .background(Color.mint)
+            .clipShape(Capsule())
         }
+        )
     }
 }
 

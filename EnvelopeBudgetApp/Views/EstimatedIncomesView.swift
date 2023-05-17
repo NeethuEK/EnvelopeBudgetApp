@@ -100,7 +100,7 @@ struct EstimatedIncomesView: View {
                         EstimatedIncomeCreateView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .tint(.green)
+                            .tint(.mint)
                     }
                     .isDetailLink(false)
                     

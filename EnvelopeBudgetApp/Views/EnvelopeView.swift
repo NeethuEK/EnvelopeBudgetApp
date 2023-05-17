@@ -22,6 +22,8 @@ struct EnvelopeView: View {
     var body: some View {
         TabView {
             NavigationView{
+                Color("BackgroundMint")
+                    .overlay (
                 VStack{
                     Text("Envelopes")
                         .font(.title)
@@ -51,10 +53,10 @@ struct EnvelopeView: View {
                         EnvelopeCreateView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .tint(.green)
+                            .tint(.mint)
                     }
                 }
-                
+                )
                 
             }//NavigationView
             .tabItem {

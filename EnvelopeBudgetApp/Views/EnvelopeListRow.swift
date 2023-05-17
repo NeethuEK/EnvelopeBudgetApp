@@ -18,7 +18,7 @@ struct EnvelopeListRow: View {
                 if envelope.label != nil{
                     Text(envelope.label ?? "Nil")
                         .font(.callout)
-                    
+                        .listRowBackground(Color.mint)
                     
                 }
                 
