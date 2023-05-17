@@ -34,6 +34,7 @@ struct EstimatedIncomesView: View {
                 VStack{
                     Text("Regular Incomes")
                         .font(.title)
+                        .foregroundColor(Color.init("TextColor"))
                     NavigationView {
                         List {
                             
@@ -55,6 +56,7 @@ struct EstimatedIncomesView: View {
                                             
                                             Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
                                                 .font(.caption)
+                                                
                                         }
                                     }
                                 }
@@ -81,19 +83,26 @@ struct EstimatedIncomesView: View {
                     
                     HStack{
                         Text("Total income")
+                            .foregroundColor(Color.init("TextColor"))
                         let total = getTotalIncome(incomes)
                        
                         
                         let formatedValue = String(format: "%.2f", total)
                         Text("\(formatedValue)")
+                            
                         
                         
                     }
-                    Text("Available income: ")
-                    let availableIncome = getAvailableAmount(incomes, Envelopes)
-                                        
-                    let formatedAvailableIncome = String(format: "%.2f", availableIncome)
-                    Text( "\(formatedAvailableIncome)")
+                    HStack{
+                        Text("Available income: ")
+                            .foregroundColor(Color.init("TextColor"))
+                        let availableIncome = getAvailableAmount(incomes, Envelopes)
+                            
+                        
+                        let formatedAvailableIncome = String(format: "%.2f", availableIncome)
+                        Text( "\(formatedAvailableIncome)")
+                    }
+                  
                     
                     
                     NavigationLink {

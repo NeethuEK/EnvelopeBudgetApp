@@ -27,20 +27,32 @@ struct EstimatedIncomeCreateView: View {
             .overlay(
         VStack{
             HStack{
-            
+                Text("Paycheck amount")
+                    .foregroundColor(Color.init("TextColor"))
                 TextField("Amount of regular paycheck", value: $amount, formatter: formatter)
                 .keyboardType(.decimalPad)
                 .background(Color.white)
                 .textFieldStyle(.roundedBorder)
+                
             
-                Picker("Select payment period", selection: $selectedPaymentPeriod) {
-                    ForEach(paymentPeriods, id: \.self){
-                        Text($0)
-                    }
-                }
+                
                 
             
             }
+            .padding(.bottom, 40.0)
+            
+            Text("Payment period")
+                .font(.subheadline)
+                .foregroundColor(Color.init("TextColor"))
+            
+            Picker("Select payment period", selection: $selectedPaymentPeriod) {
+                ForEach(paymentPeriods, id: \.self){
+                    Text($0)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.bottom, 50.0)
+                
             Button("Save") {
                 
                 do{
@@ -72,6 +84,7 @@ struct EstimatedIncomeCreateView: View {
             .foregroundColor(.black)
             .background(Color.mint)
             .clipShape(Capsule())
+            .font(.subheadline)
         }
         )
     }
