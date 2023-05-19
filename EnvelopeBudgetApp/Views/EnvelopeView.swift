@@ -22,9 +22,12 @@ struct EnvelopeView: View {
     var body: some View {
         TabView {
             NavigationView{
+                Color("BackgroundMint")
+                    .overlay (
                 VStack{
                     Text("Envelopes")
                         .font(.title)
+                        .foregroundColor(Color.init("TextColor"))
                     List(Envelopes) { envelope in
                         
                         //Text("\(envelope.label!)")
@@ -40,6 +43,7 @@ struct EnvelopeView: View {
                    
                     HStack{
                         Text(verbatim: "Available Income: ")
+                            .foregroundColor(Color.init("TextColor"))
                         var availableIncome = getAvailableAmount(incomes, Envelopes)
                                             
                         let formatedAvailableIncome = String(format: "%.2f", availableIncome)
@@ -51,10 +55,10 @@ struct EnvelopeView: View {
                         EnvelopeCreateView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .tint(.green)
+                            .tint(.mint)
                     }
                 }
-                
+                )
                 
             }//NavigationView
             .tabItem {
