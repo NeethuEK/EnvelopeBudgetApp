@@ -41,7 +41,7 @@ struct EnvelopeCreateView: View {
             VStack {
                 
                 TextField("Envelope Name", text: $envelopeTitle)
-                    //.padding(.bottom, 40)
+                    
                     .background(Color.white)
                     .textFieldStyle(.roundedBorder)
                     
@@ -51,7 +51,7 @@ struct EnvelopeCreateView: View {
                     let m = getmaxAmount()
                     Spacer()
                     Slider(value: $allocatedAmount, in: 0.0...m)
-                    //totalIncome-envelopeTotal+thisenvelope
+                    
                     TextField("Amount", value: $allocatedAmount, formatter: formatter)
                         .keyboardType(.decimalPad)
                         .background(Color.white)
