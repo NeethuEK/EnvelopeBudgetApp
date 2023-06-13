@@ -12,6 +12,12 @@ struct EnvelopeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var showCreateView = false
+
+    
+    @State var showDeleteAlert = false
+
+    //@FetchRequest(entity: Envelopes.entity(), sortDescriptors: [])
+
     
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
     
