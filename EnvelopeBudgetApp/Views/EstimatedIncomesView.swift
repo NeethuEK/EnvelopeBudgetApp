@@ -10,9 +10,13 @@ import SwiftUI
 struct EstimatedIncomesView: View {
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
     
+    @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
+    
     @Environment(\.managedObjectContext) var saver
     
     @State private var showingDeleteAlert = false
+    
+    @State private var incomeToDelete: FetchedResults<Incomes>.Element? = nil
     
     var formatter: NumberFormatter{
         let formatter = NumberFormatter()
@@ -30,6 +34,7 @@ struct EstimatedIncomesView: View {
                 VStack{
                     Text("Regular Incomes")
                         .font(.title)
+                        .foregroundColor(Color.init("TextColor"))
                     NavigationView {
                         List {
                             
@@ -48,45 +53,73 @@ struct EstimatedIncomesView: View {
                                         
                                         
                                         HStack {
-                                            //Text("\(roundedAmount)")
-                                                //.font(.caption)
                                             
                                             Text("\(getPaymentPeriod(income.paymentPeriod)) amount: \(roundedAmount)")
                                                 .font(.caption)
+                                                
                                         }
                                     }
                                 }
+                                
+                                .swipeActions {
+                                    Button("Delete",role: .destructive) {
+                                        self.incomeToDelete = income
+                                        showingDeleteAlert = true
+                                    }
+                                }.confirmationDialog(Text("Are you sure you want to delete this income"), isPresented: $showingDeleteAlert, titleVisibility: .visible) {
+                                    Button("Delete",role: .destructive) {
+                                        deleteIncome(incomeToDelete)
+                                    }
+                                    Button("Cancel", role: .cancel) {
+                                        showingDeleteAlert = false
+                                    }
+                                } //delete with confirmation message
                             }
-                            .onDelete(perform: delete)
-                            
+            
                         }//List
                         
                     }//Navigation View
                     
                     HStack{
                         Text("Total income")
+                            .foregroundColor(Color.init("TextColor"))
                         let total = getTotalIncome(incomes)
                        
                         
                         let formatedValue = String(format: "%.2f", total)
                         Text("\(formatedValue)")
+                            
                         
                         
                     }
-                    Text("Available income")
+                    HStack{
+                        Text("Available income: ")
+                            .foregroundColor(Color.init("TextColor"))
+                        let availableIncome = getAvailableAmount(incomes, Envelopes)
+                            
+                        
+                        let formatedAvailableIncome = String(format: "%.2f", availableIncome)
+                        Text( "\(formatedAvailableIncome)")
+                    }
+                  
+                    
                     
                     NavigationLink {
                         EstimatedIncomeCreateView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .tint(.green)
+                            .tint(.mint)
                     }
+                    .isDetailLink(false)
+                    
 
                     
                 }
             )
         }
     }//body view
+    
+    
     
     func delete(at offsets: IndexSet){
         
@@ -102,12 +135,16 @@ struct EstimatedIncomesView: View {
         
     }
     
-    func deleteIncome(_ income: FetchedResults<Incomes>.Element){
-        saver.delete(income)
+    func deleteIncome(_ income: FetchedResults<Incomes>.Element?){
         
+        guard let income else { return }
+        
+        saver.delete(income)
+
         do{
+
             try saver.save()
-        } catch{
+        } catch {
             print("Error when deleting income")
         }
     }

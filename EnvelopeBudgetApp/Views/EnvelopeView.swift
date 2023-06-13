@@ -12,27 +12,48 @@ struct EnvelopeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var showCreateView = false
+
     
     @State var showDeleteAlert = false
 
     //@FetchRequest(entity: Envelopes.entity(), sortDescriptors: [])
+
     
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
     
-    //@FetchRequest(
-      //  sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-      //  animation: .default)
-    //private var items: FetchedResults<Item>
+    @State private var envelopeToDelete: FetchedResults<Envelope>.Element? = nil
+    
+    @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
 
     var body: some View {
         TabView {
             NavigationView{
+                Color("BackgroundMint")
+                    .overlay (
                 VStack{
                     Text("Envelopes")
                         .font(.title)
+                        .foregroundColor(Color.init("TextColor"))
                     List(Envelopes) { envelope in
                         
-                        Text("\(envelope.label!)")
+                        //Text("\(envelope.label!)")
+                        
+                        EnvelopeListRow(envelope: envelope)
+                            .swipeActions {
+                                Button("Delete",role: .destructive) {
+                                    self.envelopeToDelete = envelope
+                                    deleteEnvelope(envelopeToDelete)
+                                }
+                            }
+                    }
+                   
+                    HStack{
+                        Text(verbatim: "Available Income: ")
+                            .foregroundColor(Color.init("TextColor"))
+                        var availableIncome = getAvailableAmount(incomes, Envelopes)
+                                            
+                        let formatedAvailableIncome = String(format: "%.2f", availableIncome)
+                        Text("\(formatedAvailableIncome)")
                     }
                     
                     
@@ -40,17 +61,10 @@ struct EnvelopeView: View {
                         EnvelopeCreateView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .tint(.green)
+                            .tint(.mint)
                     }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                 }
-                
+                )
                 
             }//NavigationView
             .tabItem {
@@ -67,40 +81,18 @@ struct EnvelopeView: View {
                 }
         }//tabView
         
-            
+    }
+    
+    func deleteEnvelope(_ env: FetchedResults<Envelope>.Element?){
+        guard let env else { return }
         
-    }
-/*
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+        viewContext.delete(env)
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error when deleting Envelope")
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }*/
 }
 
 private let itemFormatter: DateFormatter = {
