@@ -63,26 +63,23 @@ struct EstimatedIncomeEditView: View {
                 TextField("Amount of regular paycheck", value: $earning.amount, formatter: formatter)
                 .keyboardType(.decimalPad)
                 
-                
-            
-            //amount = Float(amountText) ?? 0.00
-            
-                //selectedPaymentPeriod = self.selectedPaymentPeriodValue
-                
-            //setDefaultPaymentPeriod()
-                
                 Picker("Select payment period", selection: $selectedPaymentPeriod) {
                     List {
                         ForEach(paymentPeriods, id: \.self){ paymentPeriod in
-                            
+                            Text(paymentPeriod)
                                 
                         }
                     }
-                }.onAppear{
+                }
+                
+                .onAppear{
                     //selectedPaymentPeriod = paymentPeriods[Int(earning.paymentPeriod) - 1]
                 }
+                
             
             }
+            
+            Text("\(earning.paymentPeriod)")
             Button("Save") {
                 
                 //$money.paymentPeriod = selectedPaymentPeriod
@@ -105,9 +102,6 @@ struct EstimatedIncomeEditView: View {
         }
     }
     
-    func setDefaultPaymentPeriod(){
-        selectedPaymentPeriod = paymentPeriods[Int(earning.paymentPeriod)]
-    }
     
 }
 
@@ -128,12 +122,6 @@ struct EstimatedIncomeEditView_Previews: PreviewProvider {
     }
 }*/
 
-/*
-enum PaymentPeriod: String, CaseIterable{
-    var id: ObjectIdentifier
-    
-    case Weekly, Biweekly, Semimonthly, Monthly
-}*/
 /*
 struct Previews_EstimatedIncomeEditView_Previews: PreviewProvider {
     static var previews: some View {
