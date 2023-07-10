@@ -40,8 +40,7 @@ struct EstimatedIncomesView: View {
                             
                             ForEach(incomes){ income in
                                 NavigationLink {
-                                    //EstimatedIncomeEditView()
-                                    EstimatedIncomeEditView(income: income)
+                                    EstimatedIncomeEdit(selectedIncome: income, selectedPaymentPeriod: getPaymentPeriod(income.paymentPeriod))
                                 } label: {
                                     VStack {
                                         let MonthlypaycheckAmount = String(format: "%.2f", income.monthlyAmount)
