@@ -14,8 +14,7 @@ Users can create regular and delete regular incomes to get the total amount aval
 <img src="https://user-images.githubusercontent.com/102758696/235316572-7b3bfcbc-35bd-42d7-8ead-bfd70d2a08b7.png" width=50% height=50%>
 
 ##### Income Editing
-
-<img src="https://github.com/uhteen21/EnvelopeBudgetApp/assets/102758696/8b17b471-5f75-47ed-a974-8c1e66d4edea" width="460" >
+<img src="https://github.com/uhteen21/EnvelopeBudgetApp/assets/102758696/8b17b471-5f75-47ed-a974-8c1e66d4edea" width=50% height=50%>
 
 ##### Income Deletion
 <img src="https://user-images.githubusercontent.com/102758696/235316953-56132bb0-f3f1-44c5-8146-9c699fda41d3.png" width=50% height=50%>
