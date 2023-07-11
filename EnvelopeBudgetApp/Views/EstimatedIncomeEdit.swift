@@ -54,9 +54,9 @@ struct EstimatedIncomeEdit: View {
                         
                         if selectedIncome.hasChanges || selectedPaymentPeriod != paymentPeriods[0]{
                             do{
-                                var newAmount = decimalRounding(selectedIncome.amount)
+                                let newAmount = decimalRounding(selectedIncome.amount)
                                 
-                                var newMonthlyAmount = try getMonthlyAmount(checkAmount: newAmount, paymentPeriod: selectedPaymentPeriod)
+                                let newMonthlyAmount = try getMonthlyAmount(checkAmount: newAmount, paymentPeriod: selectedPaymentPeriod)
                                 
                                 try selectedIncome.paymentPeriod = getPaymentPeriodNumber(selectedPaymentPeriod)
                                 selectedIncome.amount = newAmount
