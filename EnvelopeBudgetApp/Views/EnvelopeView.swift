@@ -40,6 +40,7 @@ struct EnvelopeView: View {
                                             deleteEnvelope(envelopeToDelete)
                                         }
                                     }
+                           
                             
                         }
                     }
