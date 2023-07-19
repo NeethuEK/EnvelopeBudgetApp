@@ -12,7 +12,6 @@ struct EnvelopeView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var showCreateView = false
-
     
     @State var showDeleteAlert = false
 
@@ -34,18 +33,13 @@ struct EnvelopeView: View {
                         .foregroundColor(Color.init("TextColor"))
                     List{
                         ForEach(Envelopes){ envelope in
-                            //NavigationLink {
-                              //  EnvelopeEditView(selectedEnvelope: envelope)
-                            //} label: {
-                            EnvelopeListRow(envelope: envelope)
-                                    .swipeActions {
+                    
+                            EnvelopeListRow(envelope: envelope)                                   .swipeActions {
                                         Button("Delete",role: .destructive){
                                             self.envelopeToDelete = envelope
                                             deleteEnvelope(envelopeToDelete)
                                         }
                                     }
-                            //} label
-
                             
                         }
                     }

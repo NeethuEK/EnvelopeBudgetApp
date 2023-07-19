@@ -8,10 +8,17 @@
 import SwiftUI
 import CoreData
 
+
 struct EnvelopeListRow: View {
-    @State var envelope: FetchedResults<Envelope>.Element
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    var envelope: FetchedResults<Envelope>.Element
+    
+    
     
     var body: some View {
+        
         NavigationLink(destination: EnvelopeEditView(selectedEnvelope: envelope)) {
             VStack{
                 
@@ -25,6 +32,7 @@ struct EnvelopeListRow: View {
                     
                     
                 }
+                
                 let formattedBudget = String(format: "%.2f", envelope.budget)
                 Text("\(formattedBudget)")
                 
@@ -32,10 +40,28 @@ struct EnvelopeListRow: View {
         }
         
     }
+    
+    func getEnvelope(with id: UUID?) -> Envelope?{
+        guard let id = id else{
+            return nil
+        }
+        
+        let request = Envelope.fetchRequest() as NSFetchRequest<Envelope>
+        request.predicate = NSPredicate(format: "%K == %@", id as NSUUID)
+        
+        guard let envelopes = try? viewContext.fetch(request) else{
+            return nil
+        }
+        
+        return envelopes.first
+        
+    }
 }
 func test(){
     print("Uh Oh")
 }
+
+/*
 struct EnvelopeListRow_Previews: PreviewProvider {
     
     @FetchRequest(sortDescriptors: []) static var Envelopes: FetchedResults<Envelope>
@@ -47,4 +73,4 @@ struct EnvelopeListRow_Previews: PreviewProvider {
         }
     }
     
-}
+}*/
