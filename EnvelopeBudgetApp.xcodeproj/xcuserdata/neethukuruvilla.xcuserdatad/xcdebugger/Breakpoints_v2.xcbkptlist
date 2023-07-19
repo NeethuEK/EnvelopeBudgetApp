@@ -62,8 +62,8 @@
             filePath = "EnvelopeBudgetApp/Views/EnvelopeListRow.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "previews"
             landmarkType = "24">
             <Locations>

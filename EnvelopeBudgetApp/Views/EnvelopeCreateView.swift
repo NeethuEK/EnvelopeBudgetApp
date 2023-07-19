@@ -41,12 +41,9 @@ struct EnvelopeCreateView: View {
             VStack {
                 
                 TextField("Envelope Name", text: $envelopeTitle)
-                    
                     .background(Color.white)
                     .textFieldStyle(.roundedBorder)
                     
-                    
-                
                 HStack{
                     let m = getmaxAmount()
                     Spacer()
@@ -80,7 +77,7 @@ struct EnvelopeCreateView: View {
                             envelope.budget = roundedAllocation
                             envelope.label = envelopeTitle
                             
-                            try? saver.save()
+                            try saver.save()
                             print("saved")
                             dismiss.self.callAsFunction()
                         } catch{
@@ -95,7 +92,7 @@ struct EnvelopeCreateView: View {
                 .alert("Title required before saving", isPresented: $showEmptyNameAlert, actions: {
                     Button("OK",role: .cancel) {}
                 })
-                .alert("Not enough money in available total budget. Please lower the amount", isPresented: $showExcessAmountAlert, actions: {
+                .alert("Not enough money in available total budget. Please lower the amount in this or another envelope to be able to save.", isPresented: $showExcessAmountAlert, actions: {
                     Button("OK",role: .cancel) {}
                 })
                 .padding()
@@ -110,7 +107,6 @@ struct EnvelopeCreateView: View {
     
     func getmaxAmount() -> Double{
         let max = getTotalIncome(incomes) - getEnvelopeTotal(envelopes)
-        //subtract envelope totals
         //subtract tracsactions that aren't sorted into an envelope
         //add transactions
         

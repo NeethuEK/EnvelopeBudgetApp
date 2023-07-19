@@ -16,8 +16,6 @@ struct EnvelopeView: View {
     
     @State var showDeleteAlert = false
 
-    //@FetchRequest(entity: Envelopes.entity(), sortDescriptors: [])
-
     
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
     
@@ -34,23 +32,28 @@ struct EnvelopeView: View {
                     Text("Envelopes")
                         .font(.title)
                         .foregroundColor(Color.init("TextColor"))
-                    List(Envelopes) { envelope in
-                        
-                        //Text("\(envelope.label!)")
-                        
-                        EnvelopeListRow(envelope: envelope)
-                            .swipeActions {
-                                Button("Delete",role: .destructive) {
-                                    self.envelopeToDelete = envelope
-                                    deleteEnvelope(envelopeToDelete)
-                                }
-                            }
+                    List{
+                        ForEach(Envelopes){ envelope in
+                            //NavigationLink {
+                              //  EnvelopeEditView(selectedEnvelope: envelope)
+                            //} label: {
+                            EnvelopeListRow(envelope: envelope)
+                                    .swipeActions {
+                                        Button("Delete",role: .destructive){
+                                            self.envelopeToDelete = envelope
+                                            deleteEnvelope(envelopeToDelete)
+                                        }
+                                    }
+                            //} label
+
+                            
+                        }
                     }
                    
                     HStack{
                         Text(verbatim: "Available Income: ")
                             .foregroundColor(Color.init("TextColor"))
-                        var availableIncome = getAvailableAmount(incomes, Envelopes)
+                        let availableIncome = getAvailableAmount(incomes, Envelopes)
                                             
                         let formatedAvailableIncome = String(format: "%.2f", availableIncome)
                         Text("\(formatedAvailableIncome)")
@@ -67,11 +70,13 @@ struct EnvelopeView: View {
                 )
                 
             }//NavigationView
+            .onAppear()
             .tabItem {
                 Image(systemName: "envelope.fill")
                     .tint(.green)
                 Text("Envelopes")
                     .foregroundColor(.green)
+                    
             }
             EstimatedIncomesView()
                 .tabItem {
@@ -94,13 +99,6 @@ struct EnvelopeView: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

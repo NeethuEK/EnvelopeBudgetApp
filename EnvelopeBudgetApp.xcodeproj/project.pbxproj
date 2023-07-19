@@ -29,6 +29,7 @@
 		0B401EFB29843A5600F632F3 /* SaveChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFA29843A5600F632F3 /* SaveChanges.swift */; };
 		0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */; };
 		0B4A32BB2A53099100579026 /* EditPaymentPeriodWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */; };
+		0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		0B401EFA29843A5600F632F3 /* SaveChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChanges.swift; sourceTree = "<group>"; };
 		0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPeriod.swift; sourceTree = "<group>"; };
 		0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentPeriodWheel.swift; sourceTree = "<group>"; };
+		0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				0B126D9128FDDB040018EEBB /* EnvelopeView.swift */,
 				0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */,
 				0B3A63E929FB05C500897C7D /* EnvelopeListRow.swift */,
+				0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */,
 				0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */,
 				0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */,
 				0B3A63ED2A42479100897C7D /* EstimatedIncomeEdit.swift */,
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */,
 				0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */,
 				0B3A63EA29FB05C500897C7D /* EnvelopeListRow.swift in Sources */,
 				0B126D9C28FDDB040018EEBB /* EnvelopeBudgetApp.xcdatamodeld in Sources */,
