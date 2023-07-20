@@ -8,14 +8,24 @@
 import SwiftUI
 import CoreData
 
+
 struct EnvelopeListRow: View {
-    @State var envelope: FetchedResults<Envelope>.Element
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @ObservedObject var envelope: FetchedResults<Envelope>.Element
+    
+    
     
     var body: some View {
+        
+        
+        
         NavigationLink(destination: EnvelopeEditView(selectedEnvelope: envelope)) {
             VStack{
                 
                 HStack {
+                    
                     if envelope.label != nil{
                         Text(envelope.label ?? "Nil")
                             .font(.callout)
@@ -25,17 +35,20 @@ struct EnvelopeListRow: View {
                     
                     
                 }
+                
                 let formattedBudget = String(format: "%.2f", envelope.budget)
                 Text("\(formattedBudget)")
                 
             }
+
         }
         
     }
+    
 }
-func test(){
-    print("Uh Oh")
-}
+
+
+
 struct EnvelopeListRow_Previews: PreviewProvider {
     
     @FetchRequest(sortDescriptors: []) static var Envelopes: FetchedResults<Envelope>

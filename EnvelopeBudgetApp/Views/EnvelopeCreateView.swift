@@ -77,6 +77,8 @@ struct EnvelopeCreateView: View {
                             envelope.budget = roundedAllocation
                             envelope.label = envelopeTitle
                             
+                            envelope.iD = UUID()
+                            
                             try saver.save()
                             print("saved")
                             dismiss.self.callAsFunction()
