@@ -59,7 +59,6 @@ struct EnvelopeCreateView: View {
                     
                 
                 Button("Save") {
-                    print("Save")
                     maxAmount = getmaxAmount()
                     //check if allocated amount is greater than max amount
                     if allocatedAmount > maxAmount{
@@ -80,7 +79,6 @@ struct EnvelopeCreateView: View {
                             envelope.iD = UUID()
                             
                             try saver.save()
-                            print("saved")
                             dismiss.self.callAsFunction()
                         } catch{
                             print("Issue saving envelope")

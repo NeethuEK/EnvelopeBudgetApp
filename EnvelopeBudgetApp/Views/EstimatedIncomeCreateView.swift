@@ -5,6 +5,8 @@
 //  Created by Neethu Kuruvilla on 1/9/23.
 //
 
+//Testing
+
 import SwiftUI
 
 struct EstimatedIncomeCreateView: View {
@@ -22,6 +24,7 @@ struct EstimatedIncomeCreateView: View {
         formatter.numberStyle = .currency
         return formatter
     }
+    
     var body: some View {
         Color("BackgroundMint")
             .overlay(
