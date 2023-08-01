@@ -5,8 +5,6 @@
 //  Created by Neethu Kuruvilla on 1/9/23.
 //
 
-//Testing
-
 import SwiftUI
 
 struct EstimatedIncomeCreateView: View {
