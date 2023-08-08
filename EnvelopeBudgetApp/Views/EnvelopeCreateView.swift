@@ -28,12 +28,6 @@ struct EnvelopeCreateView: View {
     
     @State private var showExcessAmountAlert = false
     
-    var formatter: NumberFormatter{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }
-    
     var body: some View {
         
         Color("BackgroundMint")
@@ -49,17 +43,17 @@ struct EnvelopeCreateView: View {
                     Spacer()
                     Slider(value: $allocatedAmount, in: 0.0...m)
                     
-                    TextField("Amount", value: $allocatedAmount, formatter: formatter)
+                    TextField("", value: $allocatedAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .keyboardType(.decimalPad)
                         .background(Color.white)
                         .textFieldStyle(.roundedBorder)
+                    
                     Spacer()
                 }.padding(.bottom, 60)
                     .padding(.top, 40)
                     
                 
                 Button("Save") {
-                    print("Save")
                     maxAmount = getmaxAmount()
                     //check if allocated amount is greater than max amount
                     if allocatedAmount > maxAmount{
@@ -80,7 +74,6 @@ struct EnvelopeCreateView: View {
                             envelope.iD = UUID()
                             
                             try saver.save()
-                            print("saved")
                             dismiss.self.callAsFunction()
                         } catch{
                             print("Issue saving envelope")

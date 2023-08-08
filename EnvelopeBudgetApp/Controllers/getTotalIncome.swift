@@ -15,7 +15,7 @@ func getTotalIncome(_ incomeList: FetchedResults<Incomes>) -> Double{
         total += income.monthlyAmount
     }
     
-    print("TOTAL MONTHLY INCOME: \(total)")
+    
     
     return total
 }

@@ -17,22 +17,21 @@ struct EstimatedIncomeCreateView: View {
     
     @State private var amount : Double = 0.00
     
-    var formatter: NumberFormatter{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }
     var body: some View {
+        
         Color("BackgroundMint")
             .overlay(
         VStack{
             HStack{
                 Text("Paycheck amount")
                     .foregroundColor(Color.init("TextColor"))
-                TextField("Amount of regular paycheck", value: $amount, formatter: formatter)
-                .keyboardType(.decimalPad)
-                .background(Color.white)
-                .textFieldStyle(.roundedBorder)
+                
+                TextField("", value: $amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    .keyboardType(.decimalPad)
+                    .background(Color.white)
+                    .textFieldStyle(.roundedBorder)
+                
+                
                 
             
                 

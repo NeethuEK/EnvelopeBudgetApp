@@ -22,12 +22,6 @@ struct EstimatedIncomeEdit: View {
     
     @State var selectedPaymentPeriod: String
     
-    var formatter: NumberFormatter{
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .currency
-            return formatter
-        }
-    
     var body: some View {
         Color("BackgroundMint")
             .overlay(
@@ -36,7 +30,8 @@ struct EstimatedIncomeEdit: View {
                         Text("Paycheck amount")
                             .foregroundColor(Color.init("TextColor"))
                         
-                        TextField("amount in regular paycheck", value: $selectedIncome.amount, formatter: formatter)
+                        
+                        TextField("", value: $selectedIncome.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                             .keyboardType(.decimalPad)
                             .background(Color.white)
                             .textFieldStyle(.roundedBorder)

@@ -15,8 +15,6 @@ struct EnvelopeListRow: View {
     
     @ObservedObject var envelope: FetchedResults<Envelope>.Element
     
-    
-    
     var body: some View {
         
         

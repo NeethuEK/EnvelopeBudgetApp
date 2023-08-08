@@ -18,12 +18,6 @@ struct EstimatedIncomesView: View {
     
     @State private var incomeToDelete: FetchedResults<Incomes>.Element? = nil
     
-    var formatter: NumberFormatter{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }
-    
     
     var body: some View {
         
