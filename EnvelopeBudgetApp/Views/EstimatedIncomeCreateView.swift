@@ -17,12 +17,6 @@ struct EstimatedIncomeCreateView: View {
     
     @State private var amount : Double = 0.00
     
-    var formatter: NumberFormatter{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }
-    
     var body: some View {
         
         Color("BackgroundMint")

@@ -28,12 +28,6 @@ struct EnvelopeCreateView: View {
     
     @State private var showExcessAmountAlert = false
     
-    var formatter: NumberFormatter{
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        return formatter
-    }
-    
     var body: some View {
         
         Color("BackgroundMint")
