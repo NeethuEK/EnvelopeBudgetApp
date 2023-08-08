@@ -49,10 +49,11 @@ struct EnvelopeCreateView: View {
                     Spacer()
                     Slider(value: $allocatedAmount, in: 0.0...m)
                     
-                    TextField("Amount", value: $allocatedAmount, formatter: formatter)
+                    TextField("", value: $allocatedAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .keyboardType(.decimalPad)
                         .background(Color.white)
                         .textFieldStyle(.roundedBorder)
+                    
                     Spacer()
                 }.padding(.bottom, 60)
                     .padding(.top, 40)
