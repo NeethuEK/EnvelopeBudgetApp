@@ -31,12 +31,6 @@ Users can create envelopes to represent catagories of spending. Such as gas, ame
 
 * When deleting an income, the delete prompt will dissapear then reappear when the income is swiped again before the swipe button "Delete" is actually pressed. When the deletion is confirmed the proper income is deleted, but the deletion prompt will reapear for a brief second before disappearing
 
-* If the dollar sign is removed when inputing the amount when creating a new income, the amount will be saved as 0.
-
 ## Roapmap/Planned Features
 
-* Fully implement envelopes
-  * Ability edit envelopes
-* Fully implement incomes
 * Implement transactions
-* Add UI design
