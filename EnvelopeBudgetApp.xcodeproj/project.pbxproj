@@ -29,6 +29,8 @@
 		0B401EFB29843A5600F632F3 /* SaveChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFA29843A5600F632F3 /* SaveChanges.swift */; };
 		0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */; };
 		0B4A32BB2A53099100579026 /* EditPaymentPeriodWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */; };
+		0B5971812A8BF110002CBFA9 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971802A8BF110002CBFA9 /* TransactionsListView.swift */; };
+		0B5971862A8BF1FD002CBFA9 /* TransactionsCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971852A8BF1FD002CBFA9 /* TransactionsCreateView.swift */; };
 		0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		0B401EFA29843A5600F632F3 /* SaveChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChanges.swift; sourceTree = "<group>"; };
 		0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPeriod.swift; sourceTree = "<group>"; };
 		0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentPeriodWheel.swift; sourceTree = "<group>"; };
+		0B5971802A8BF110002CBFA9 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
+		0B5971852A8BF1FD002CBFA9 /* TransactionsCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCreateView.swift; sourceTree = "<group>"; };
 		0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,13 +138,9 @@
 		0B36F813291405E900902AEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B126D9128FDDB040018EEBB /* EnvelopeView.swift */,
-				0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */,
-				0B3A63E929FB05C500897C7D /* EnvelopeListRow.swift */,
-				0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */,
-				0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */,
-				0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */,
-				0B3A63ED2A42479100897C7D /* EstimatedIncomeEdit.swift */,
+				0B5971822A8BF11B002CBFA9 /* Envelope */,
+				0B5971832A8BF129002CBFA9 /* EstimatedIncome */,
+				0B5971842A8BF1D0002CBFA9 /* Transactions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +173,36 @@
 				0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0B5971822A8BF11B002CBFA9 /* Envelope */ = {
+			isa = PBXGroup;
+			children = (
+				0B126D9128FDDB040018EEBB /* EnvelopeView.swift */,
+				0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */,
+				0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */,
+				0B3A63E929FB05C500897C7D /* EnvelopeListRow.swift */,
+			);
+			path = Envelope;
+			sourceTree = "<group>";
+		};
+		0B5971832A8BF129002CBFA9 /* EstimatedIncome */ = {
+			isa = PBXGroup;
+			children = (
+				0B36F7E7290ABFCF00902AEB /* EstimatedIncomesView.swift */,
+				0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */,
+				0B3A63ED2A42479100897C7D /* EstimatedIncomeEdit.swift */,
+			);
+			path = EstimatedIncome;
+			sourceTree = "<group>";
+		};
+		0B5971842A8BF1D0002CBFA9 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				0B5971802A8BF110002CBFA9 /* TransactionsListView.swift */,
+				0B5971852A8BF1FD002CBFA9 /* TransactionsCreateView.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */,
+				0B5971812A8BF110002CBFA9 /* TransactionsListView.swift in Sources */,
 				0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */,
 				0B3A63EA29FB05C500897C7D /* EnvelopeListRow.swift in Sources */,
 				0B126D9C28FDDB040018EEBB /* EnvelopeBudgetApp.xcdatamodeld in Sources */,
@@ -309,6 +340,7 @@
 				0B126D9928FDDB040018EEBB /* Persistence.swift in Sources */,
 				0B401EE2296DDFAC00F632F3 /* PaymentPeriodConverter.swift in Sources */,
 				0B126D9228FDDB040018EEBB /* EnvelopeView.swift in Sources */,
+				0B5971862A8BF1FD002CBFA9 /* TransactionsCreateView.swift in Sources */,
 				0B401EF92980555A00F632F3 /* EnvelopeCreateView.swift in Sources */,
 				0B1994932943DB4D008D66E8 /* saveIncome.swift in Sources */,
 				0B1994912943CA57008D66E8 /* CurrencyFormatter.swift in Sources */,

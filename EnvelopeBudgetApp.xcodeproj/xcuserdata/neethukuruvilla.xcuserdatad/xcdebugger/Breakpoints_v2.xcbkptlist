@@ -279,7 +279,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EF5A5A14-8BDB-42F7-A5AD-07A959A38230"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EnvelopeBudgetApp/Views/EstimatedIncomeCreateView.swift"
