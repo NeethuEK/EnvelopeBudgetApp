@@ -77,6 +77,7 @@ struct EnvelopeEditView: View {
                                 try? saver.save()
                             }catch{
                                 print(error.localizedDescription)
+                                
                             }
                             
                         }

@@ -31,6 +31,11 @@
 		0B4A32BB2A53099100579026 /* EditPaymentPeriodWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */; };
 		0B5971812A8BF110002CBFA9 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971802A8BF110002CBFA9 /* TransactionsListView.swift */; };
 		0B5971862A8BF1FD002CBFA9 /* TransactionsCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971852A8BF1FD002CBFA9 /* TransactionsCreateView.swift */; };
+		0B5971882A8C2E39002CBFA9 /* ExpenseCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971872A8C2E39002CBFA9 /* ExpenseCreationView.swift */; };
+		0B59718A2A97D86A002CBFA9 /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971892A97D86A002CBFA9 /* Transactions.swift */; };
+		0B59718E2A9D288A002CBFA9 /* ExpenseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59718D2A9D288A002CBFA9 /* ExpenseRow.swift */; };
+		0B5971982AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971972AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift */; };
+		0B59719A2AAA6137002CBFA9 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971992AAA6137002CBFA9 /* Errors.swift */; };
 		0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,11 @@
 		0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPaymentPeriodWheel.swift; sourceTree = "<group>"; };
 		0B5971802A8BF110002CBFA9 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
 		0B5971852A8BF1FD002CBFA9 /* TransactionsCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCreateView.swift; sourceTree = "<group>"; };
+		0B5971872A8C2E39002CBFA9 /* ExpenseCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCreationView.swift; sourceTree = "<group>"; };
+		0B5971892A97D86A002CBFA9 /* Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		0B59718D2A9D288A002CBFA9 /* ExpenseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRow.swift; sourceTree = "<group>"; };
+		0B5971972AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnvelopeAmount.swift; sourceTree = "<group>"; };
+		0B5971992AAA6137002CBFA9 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				0B401EFD298C2ACA00F632F3 /* PaymentPeriod.swift */,
+				0B5971892A97D86A002CBFA9 /* Transactions.swift */,
+				0B5971992AAA6137002CBFA9 /* Errors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +183,7 @@
 				0B3A63E729C8FD2900897C7D /* GetEnvelopeTotal.swift */,
 				0B3A63EB2A0D502A00897C7D /* availableAmountCalculations.swift */,
 				0B4A32BA2A53099100579026 /* EditPaymentPeriodWheel.swift */,
+				0B5971972AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +214,8 @@
 			children = (
 				0B5971802A8BF110002CBFA9 /* TransactionsListView.swift */,
 				0B5971852A8BF1FD002CBFA9 /* TransactionsCreateView.swift */,
+				0B5971872A8C2E39002CBFA9 /* ExpenseCreationView.swift */,
+				0B59718D2A9D288A002CBFA9 /* ExpenseRow.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -329,15 +344,20 @@
 			files = (
 				0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */,
 				0B5971812A8BF110002CBFA9 /* TransactionsListView.swift in Sources */,
+				0B59718E2A9D288A002CBFA9 /* ExpenseRow.swift in Sources */,
 				0B401EFE298C2ACA00F632F3 /* PaymentPeriod.swift in Sources */,
 				0B3A63EA29FB05C500897C7D /* EnvelopeListRow.swift in Sources */,
 				0B126D9C28FDDB040018EEBB /* EnvelopeBudgetApp.xcdatamodeld in Sources */,
 				0B36F7E8290ABFCF00902AEB /* EstimatedIncomesView.swift in Sources */,
+				0B59719A2AAA6137002CBFA9 /* Errors.swift in Sources */,
+				0B59718A2A97D86A002CBFA9 /* Transactions.swift in Sources */,
 				0B3A63E829C8FD2900897C7D /* GetEnvelopeTotal.swift in Sources */,
 				0B199495294BD274008D66E8 /* DecimalRounding.swift in Sources */,
 				0B3A63EC2A0D502A00897C7D /* availableAmountCalculations.swift in Sources */,
+				0B5971982AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift in Sources */,
 				0B401EFB29843A5600F632F3 /* SaveChanges.swift in Sources */,
 				0B126D9928FDDB040018EEBB /* Persistence.swift in Sources */,
+				0B5971882A8C2E39002CBFA9 /* ExpenseCreationView.swift in Sources */,
 				0B401EE2296DDFAC00F632F3 /* PaymentPeriodConverter.swift in Sources */,
 				0B126D9228FDDB040018EEBB /* EnvelopeView.swift in Sources */,
 				0B5971862A8BF1FD002CBFA9 /* TransactionsCreateView.swift in Sources */,

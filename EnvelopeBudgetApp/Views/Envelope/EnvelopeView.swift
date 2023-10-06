@@ -79,6 +79,11 @@ struct EnvelopeView: View {
                         .tint(.green)
                     Text("Income")
                 }
+            TransactionsListView()
+                .tabItem {
+                    Image(systemName: "doc.on.doc")
+                    Text("Transaction")
+                }
         }//tabView
         
     }

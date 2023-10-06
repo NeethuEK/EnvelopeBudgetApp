@@ -13,14 +13,16 @@
         <attribute name="budget" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="iD" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="label" optional="YES" attributeType="String"/>
+        <relationship name="expenseTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="env" inverseEntity="Expense"/>
+        <relationship name="refillTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Refill" inverseName="refillEnv" inverseEntity="Refill"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="envelope" optional="YES" attributeType="Transformable" valueTransformerName="Envelope"/>
+        <attribute name="dateOf" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="payee" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="env" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Envelope" inverseName="expenseTransaction" inverseEntity="Envelope"/>
     </entity>
     <entity name="Incomes" representedClassName="Incomes" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -38,6 +40,8 @@
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="to" optional="YES" attributeType="Transformable" valueTransformerName="Envelope"/>
+        <relationship name="destinationEnvelope" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Envelope"/>
+        <relationship name="sourceEnvelope" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Envelope"/>
     </entity>
     <entity name="Refill" representedClassName="Refill" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -45,5 +49,6 @@
         <attribute name="envelope" optional="YES" attributeType="Transformable" valueTransformerName="Envelope"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="refillEnv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Envelope" inverseName="refillTransaction" inverseEntity="Envelope"/>
     </entity>
 </model>

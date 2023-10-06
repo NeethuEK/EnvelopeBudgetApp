@@ -12,6 +12,10 @@ enum PaymentPeriodError: Error{
     
 }
 
+extension PaymentPeriodError: LocalizedError{
+    
+}
+
 func getPaymentPeriod(_ num: Int16) -> String{
     switch num{
     case 1:
