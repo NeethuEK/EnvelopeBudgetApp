@@ -16,6 +16,8 @@ struct EnvelopeCreateView: View {
     
     @FetchRequest(sortDescriptors: []) var envelopes: FetchedResults<Envelope>
     
+    @FetchRequest(sortDescriptors: []) var additionalIncomes: FetchedResults<AdditionalIncome>
+    
     @Environment(\.managedObjectContext) var saver
     
     @State var allocatedAmount : Double = 0
@@ -101,7 +103,7 @@ struct EnvelopeCreateView: View {
     }
     
     func getmaxAmount() -> Double{
-        let max = getTotalIncome(incomes) - getEnvelopeTotal(envelopes)
+        let max = getTotalIncome(incomes, additionalIncomes) - getEnvelopeTotal(envelopes)
         //subtract tracsactions that aren't sorted into an envelope
         //add transactions
         

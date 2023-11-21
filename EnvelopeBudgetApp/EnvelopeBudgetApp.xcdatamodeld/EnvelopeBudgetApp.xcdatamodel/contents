@@ -3,16 +3,18 @@
     <entity name="AdditionalIncome" representedClassName="AdditionalIncome" syncable="YES" codeGenerationType="class">
         <attribute name="allocation" optional="YES" attributeType="Transformable" valueTransformerName="Envelope"/>
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateOf" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="payer" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="willGoToEnvelope" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="env" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Envelope" inverseName="additionalIncomeTransaction" inverseEntity="Envelope"/>
     </entity>
     <entity name="Envelope" representedClassName="Envelope" syncable="YES" codeGenerationType="class">
         <attribute name="budget" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="iD" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="label" optional="YES" attributeType="String"/>
+        <relationship name="additionalIncomeTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdditionalIncome" inverseName="env" inverseEntity="AdditionalIncome"/>
         <relationship name="expenseTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="env" inverseEntity="Expense"/>
         <relationship name="reallocateDestination" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reallocate" inverseName="destinationEnvelope" inverseEntity="Reallocate"/>
         <relationship name="reallocateSource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reallocate" inverseName="sourceEnvelope" inverseEntity="Reallocate"/>

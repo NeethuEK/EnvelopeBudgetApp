@@ -110,7 +110,7 @@ struct ExpenseCreationView: View {
                     do{
                         try saver.save()
                         dismiss.self.callAsFunction()
-                        print("Envelope amount:\(selectedEnvelope?.label)")
+                        print("Envelope amount:\(selectedEnvelope?.label ?? "Error! Not Found!")")
                         
                     }catch{
                         print("Issue saving expense")

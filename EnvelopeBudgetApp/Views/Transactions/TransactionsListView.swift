@@ -10,28 +10,16 @@ import SwiftUI
 
 struct TransactionsListView: View {
     
-    
-    
-    @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.dateOf)
-    ]) var Expenses: FetchedResults<Expense>
-    
-    var transactionList: [Any]{
-        var list = [Any]()
-        list.append(Expenses)
-        
-        return list
-        
-    }
     @Environment(\.managedObjectContext) var saver
     
-    @State private var expenseToDelete: FetchedResults<Expense>.Element? = nil
+    var listTypes = ["Expense","Additional Income","Reallocate"]
     
-    @State private var showingDeleteAlert = false
+    @State var chosenList : String 
     
-    @State private var showingReturnAmountAlert = false
     
     var body: some View {
+        
+        
         NavigationView {
             VStack{
                 
@@ -39,6 +27,31 @@ struct TransactionsListView: View {
                 Text("Transactions")
                     .font(.title)
                 
+                HStack{
+                    Spacer()
+                    Button("Expenses") {
+                        chosenList = listTypes[0]
+                    }
+                    Button("Additional Incomes") {
+                        chosenList = listTypes[1]
+                    }
+                    Button("Reallocations") {
+                        chosenList = listTypes[2]
+                    }
+                }
+                switch chosenList{
+                case listTypes[0]:
+                    ExpenseListView()
+                    
+                case listTypes[1]:
+                    AdditonalIncomesListView()
+                case listTypes[2]:
+                    ReallocationsListView()
+                default:
+                    Text("Please select transaction type you'd like to see")
+                }
+                
+                /*
                 List{
                     ForEach(Expenses) { expense in
                         ExpenseRow(expense: expense)
@@ -84,9 +97,9 @@ struct TransactionsListView: View {
                         
                     }
                     
-                }
+                } List End*/
                                 
-                NavigationLink(destination: TransactionsCreateView()) {
+                NavigationLink(destination: TransactionsCreateView(chosenList: chosenList)) {
                     Image(systemName: "plus.circle.fill")
                         .tint(.mint)
                 }
@@ -98,8 +111,9 @@ struct TransactionsListView: View {
     }
 }
 
+
 struct TransactionsListView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionsListView()
+        TransactionsListView(chosenList: "Expense")
     }
 }

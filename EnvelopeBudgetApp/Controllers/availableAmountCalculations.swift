@@ -9,6 +9,6 @@ import Foundation
 import CoreData
 import SwiftUI
 
-func getAvailableAmount(_ incomes: FetchedResults<Incomes>,_ envelopes: FetchedResults<Envelope>) -> Double{
-    return (getTotalIncome(incomes) - getEnvelopeTotal(envelopes))
+func getAvailableAmount(_ incomes: FetchedResults<Incomes>,_ additonalIncomes: FetchedResults<AdditionalIncome>,_ envelopes: FetchedResults<Envelope>) -> Double{
+    return (getTotalIncome(incomes, additonalIncomes) - getEnvelopeTotal(envelopes))
 }

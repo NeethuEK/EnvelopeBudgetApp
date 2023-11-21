@@ -31,6 +31,8 @@ struct EnvelopeEditView: View {
     
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
     
+    @FetchRequest(sortDescriptors: []) var additonalIncomes: FetchedResults<AdditionalIncome>
+    
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
     
     @Environment(\.managedObjectContext) var saver
@@ -93,7 +95,7 @@ struct EnvelopeEditView: View {
     }
     
     func getMaxforEditingEnvelope() -> Double{
-        let max = getTotalIncome(incomes) - getEnvelopeTotal(Envelopes) + selectedEnvelope.budget
+        let max = getTotalIncome(incomes, additonalIncomes) - getEnvelopeTotal(Envelopes) + selectedEnvelope.budget
         
         return max
     }

@@ -21,6 +21,8 @@ struct EnvelopeView: View {
     @State private var envelopeToDelete: FetchedResults<Envelope>.Element? = nil
     
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
+    
+    @FetchRequest(sortDescriptors: []) var additionalIncomes: FetchedResults<AdditionalIncome>
 
     var body: some View {
         TabView {
@@ -48,7 +50,7 @@ struct EnvelopeView: View {
                     HStack{
                         Text(verbatim: "Available Income: ")
                             .foregroundColor(Color.init("TextColor"))
-                        let availableIncome = getAvailableAmount(incomes, Envelopes)
+                        let availableIncome = getAvailableAmount(incomes,additionalIncomes, Envelopes)
                                             
                         let formatedAvailableIncome = String(format: "%.2f", availableIncome)
                         Text("\(formatedAvailableIncome)")
@@ -79,7 +81,7 @@ struct EnvelopeView: View {
                         .tint(.green)
                     Text("Income")
                 }
-            TransactionsListView()
+            TransactionsListView(chosenList: "Expense")
                 .tabItem {
                     Image(systemName: "doc.on.doc")
                     Text("Transaction")

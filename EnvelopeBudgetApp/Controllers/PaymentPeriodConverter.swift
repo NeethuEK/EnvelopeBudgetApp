@@ -7,15 +7,6 @@
 
 import Foundation
 
-enum PaymentPeriodError: Error{
-    case invalidPaymentString
-    
-}
-
-extension PaymentPeriodError: LocalizedError{
-    
-}
-
 func getPaymentPeriod(_ num: Int16) -> String{
     switch num{
     case 1:

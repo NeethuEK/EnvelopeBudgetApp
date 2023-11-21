@@ -10,6 +10,8 @@ import SwiftUI
 struct EstimatedIncomesView: View {
     @FetchRequest(sortDescriptors: []) var incomes: FetchedResults<Incomes>
     
+    @FetchRequest(sortDescriptors: []) var additionalIncomes: FetchedResults<AdditionalIncome>
+    
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
     
     @Environment(\.managedObjectContext) var saver
@@ -76,7 +78,7 @@ struct EstimatedIncomesView: View {
                     HStack{
                         Text("Total income")
                             .foregroundColor(Color.init("TextColor"))
-                        let total = getTotalIncome(incomes)
+                        let total = getTotalIncome(incomes, additionalIncomes)
                        
                         
                         let formatedValue = String(format: "%.2f", total)
@@ -88,7 +90,7 @@ struct EstimatedIncomesView: View {
                     HStack{
                         Text("Available income: ")
                             .foregroundColor(Color.init("TextColor"))
-                        let availableIncome = getAvailableAmount(incomes, Envelopes)
+                        let availableIncome = getAvailableAmount(incomes, additionalIncomes, Envelopes)
                             
                         
                         let formatedAvailableIncome = String(format: "%.2f", availableIncome)

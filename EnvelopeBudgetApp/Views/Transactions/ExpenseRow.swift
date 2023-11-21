@@ -25,6 +25,8 @@ struct ExpenseRow: View {
 
             Spacer()
             VStack{
+                Text("\(expense.title ?? "")")
+                
                 if expense.dateOf == nil{
                     Text("Error: Date not found")
                 }else{
