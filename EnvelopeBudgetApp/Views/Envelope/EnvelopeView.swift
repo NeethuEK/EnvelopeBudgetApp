@@ -14,7 +14,6 @@ struct EnvelopeView: View {
     @State var showCreateView = false
     
     @State var showDeleteAlert = false
-
     
     @FetchRequest(sortDescriptors: []) var Envelopes: FetchedResults<Envelope>
     
@@ -51,7 +50,7 @@ struct EnvelopeView: View {
                         Text(verbatim: "Available Income: ")
                             .foregroundColor(Color.init("TextColor"))
                         let availableIncome = getAvailableAmount(incomes,additionalIncomes, Envelopes)
-                                            
+                        
                         let formatedAvailableIncome = String(format: "%.2f", availableIncome)
                         Text("\(formatedAvailableIncome)")
                     }

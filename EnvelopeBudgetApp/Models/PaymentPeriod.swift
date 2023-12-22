@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 protocol PaymentPeriod {
     var type : String { get }
 }
@@ -14,3 +15,18 @@ protocol PaymentPeriod {
 struct Monthly : PaymentPeriod {
     var type = "Monthly"
 }
+
+struct SemiMonthly : PaymentPeriod{
+    var type = "Semimonthly"
+}
+
+struct Biweekly : PaymentPeriod{
+    var type = "Biweekly"
+}
+
+struct Weekly : PaymentPeriod{
+    var type = "Weekly"
+}*/
+
+
+

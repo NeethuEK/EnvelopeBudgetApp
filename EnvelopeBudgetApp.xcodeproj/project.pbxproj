@@ -23,7 +23,6 @@
 		0B3A63EE2A42479100897C7D /* EstimatedIncomeEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A63ED2A42479100897C7D /* EstimatedIncomeEdit.swift */; };
 		0B401EE0296CC20900F632F3 /* EstimatedIncomeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */; };
 		0B401EE2296DDFAC00F632F3 /* PaymentPeriodConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */; };
-		0B401EEC2972E02800F632F3 /* MonthlyAmountTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */; };
 		0B401EF729773C6E00F632F3 /* getTotalIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EF629773C6D00F632F3 /* getTotalIncome.swift */; };
 		0B401EF92980555A00F632F3 /* EnvelopeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */; };
 		0B401EFB29843A5600F632F3 /* SaveChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B401EFA29843A5600F632F3 /* SaveChanges.swift */; };
@@ -73,7 +72,6 @@
 		0B401EDF296CC20900F632F3 /* EstimatedIncomeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatedIncomeCreateView.swift; sourceTree = "<group>"; };
 		0B401EE1296DDFAC00F632F3 /* PaymentPeriodConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPeriodConverter.swift; sourceTree = "<group>"; };
 		0B401EE92972E02800F632F3 /* MonthlyAmountTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyAmountTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyAmountTesting.swift; sourceTree = "<group>"; };
 		0B401EF629773C6D00F632F3 /* getTotalIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTotalIncome.swift; sourceTree = "<group>"; };
 		0B401EF82980555A00F632F3 /* EnvelopeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeCreateView.swift; sourceTree = "<group>"; };
 		0B401EFA29843A5600F632F3 /* SaveChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveChanges.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				0B126D8E28FDDB040018EEBB /* EnvelopeBudgetApp */,
-				0B401EEA2972E02800F632F3 /* MonthlyAmountTesting */,
 				0B126D8D28FDDB040018EEBB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,14 +160,6 @@
 				0B5971842A8BF1D0002CBFA9 /* Transactions */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		0B401EEA2972E02800F632F3 /* MonthlyAmountTesting */ = {
-			isa = PBXGroup;
-			children = (
-				0B401EEB2972E02800F632F3 /* MonthlyAmountTesting.swift */,
-			);
-			path = MonthlyAmountTesting;
 			sourceTree = "<group>";
 		};
 		0B401EF529773B0D00F632F3 /* Models */ = {
@@ -396,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B401EEC2972E02800F632F3 /* MonthlyAmountTesting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

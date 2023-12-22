@@ -9,9 +9,9 @@ import Foundation
 
 enum PaymentPeriodError: Error{
     case invalidPaymentString
-    
+    case invalidPaymentNumber
 }
 
-extension PaymentPeriodError: LocalizedError{
+//extension PaymentPeriodError: LocalizedError{
     
-}
+//}
