@@ -69,7 +69,7 @@
             <Locations>
                <Location
                   uuid = "03CDB923-76EC-40D9-9A99-28CD47C2B26B - 1c01821c78ca851f"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "static EnvelopeBudgetApp.EnvelopeListRow_Previews.previews.getter : some"
@@ -84,7 +84,7 @@
                </Location>
                <Location
                   uuid = "03CDB923-76EC-40D9-9A99-28CD47C2B26B - 1c01821c78ca851f"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "static EnvelopeBudgetApp.EnvelopeListRow_Previews.previews.getter : some"

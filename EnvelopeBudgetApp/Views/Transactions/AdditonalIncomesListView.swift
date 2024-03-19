@@ -20,9 +20,9 @@ struct AdditonalIncomesListView: View {
                 AdditionalIncomeRow(additonalIncome: addIncome)
                     .swipeActions {
                         Button("Delete", role: .destructive) {
-                            
+                            //TODO: add Alert so that user knows that envelope amount might change
                             if addIncome.env != nil{
-                                
+                                addIncome.env?.budget = addIncome.env!.budget - addIncome.amount
                             }
                             saver.delete(addIncome)
                         }
