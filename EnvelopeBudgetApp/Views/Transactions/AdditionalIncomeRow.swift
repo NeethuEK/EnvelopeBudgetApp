@@ -12,6 +12,8 @@ struct AdditionalIncomeRow: View {
     
     @ObservedObject var additonalIncome: FetchedResults<AdditionalIncome>.Element
     
+    
+    
     var body: some View {
         HStack {
             let formattedAmount = String(format: "%.2f", additonalIncome.amount)

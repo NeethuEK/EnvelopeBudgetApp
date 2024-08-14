@@ -41,6 +41,7 @@
 		0B5971882A8C2E39002CBFA9 /* ExpenseCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971872A8C2E39002CBFA9 /* ExpenseCreationView.swift */; };
 		0B59718E2A9D288A002CBFA9 /* ExpenseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59718D2A9D288A002CBFA9 /* ExpenseRow.swift */; };
 		0B5971982AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5971972AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift */; };
+		0B5AFD7E2C46E86C0062D0F3 /* ReallocationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AFD7D2C46E86C0062D0F3 /* ReallocationRow.swift */; };
 		0BCB9B3C2A5F2D3A00AA3891 /* EnvelopeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		0B5971872A8C2E39002CBFA9 /* ExpenseCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCreationView.swift; sourceTree = "<group>"; };
 		0B59718D2A9D288A002CBFA9 /* ExpenseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRow.swift; sourceTree = "<group>"; };
 		0B5971972AA3AD7B002CBFA9 /* EditEnvelopeAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnvelopeAmount.swift; sourceTree = "<group>"; };
+		0B5AFD7D2C46E86C0062D0F3 /* ReallocationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReallocationRow.swift; sourceTree = "<group>"; };
 		0BCB9B3B2A5F2D3A00AA3891 /* EnvelopeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +233,7 @@
 				0B5395262AE056B300531875 /* ExpenseListView.swift */,
 				0B53952A2AE08A8800531875 /* AdditonalIncomesListView.swift */,
 				0B5395282AE07C2400531875 /* ReallocationsListView.swift */,
+				0B5AFD7D2C46E86C0062D0F3 /* ReallocationRow.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				0B126D9228FDDB040018EEBB /* EnvelopeView.swift in Sources */,
 				0B5971862A8BF1FD002CBFA9 /* TransactionsCreateView.swift in Sources */,
 				0B53952B2AE08A8800531875 /* AdditonalIncomesListView.swift in Sources */,
+				0B5AFD7E2C46E86C0062D0F3 /* ReallocationRow.swift in Sources */,
 				0B401EF92980555A00F632F3 /* EnvelopeCreateView.swift in Sources */,
 				0B1994932943DB4D008D66E8 /* saveIncome.swift in Sources */,
 				0B5395292AE07C2400531875 /* ReallocationsListView.swift in Sources */,
