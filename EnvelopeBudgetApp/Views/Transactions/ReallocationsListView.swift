@@ -26,6 +26,7 @@ struct ReallocationsListView: View {
                         
                         
                         if realloc.sourceEnvelope != nil && realloc.destinationEnvelope != nil{
+                        
                             subtractEnvelopeBudget(realloc.amount, realloc.destinationEnvelope)
                             addEnvelopeBudget(realloc.amount, realloc.sourceEnvelope)
                             
